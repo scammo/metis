@@ -1,0 +1,22 @@
+{
+  "name": "policy-anker",
+  "version": "1.0.0",
+  "description": "Versicherungen",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "docker-compose build && docker-compose up",
+    "test": "docker-compose build && docker-compose -f docker-compose-e2e.yaml up --force-recreate --abort-on-container-exit",
+    "test:dev": "docker-compose build && docker-compose -f docker-compose-e2e-dev.yaml up --force-recreate --abort-on-container-exit",
+    "postinstall": "concurrently \"cd api && npm install\" \"cd client && npm install\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "jsdoc-to-markdown": "^4.0.1",
+    "mocha": "^5.2.0"
+  }
+}

@@ -1,0 +1,42 @@
+version: "3"
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: ./local.Dockerfile
+    tty: true
+    command: npm run test:e2e
+    environment:
+      DISPLAY: xserver:0 
+      UV_THREADPOOL_SIZE: 2
+    ports:
+      - 8080:8080
+    volumes:
+      - ./client/src:/app/src
+      - ./client/tests:/app/tests
+  api:
+    build: ./api
+    command: npm run serve
+    depends_on:
+      - mongodb
+    ports:
+      - 3030:3030
+      - 9000:9000
+    volumes:
+      - ./api/public:/app/public
+      - ./api/src:/app/src
+    environment:
+      - E2E=1
+      - NODE_ENV=docker
+  mongodb:
+    image: mongo:3.6.7
+    ports:
+      - 27017:27017
+  xserver:
+    image: codeanker/xserver:latest
+    ports:
+      - 5900:5900
+    environment:
+      VNC_PASSWORD: yourPW
+      XFB_SCREEN: 1920x1080x24
+      XFB_SCREEN_DPI: 100
