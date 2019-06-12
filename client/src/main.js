@@ -11,8 +11,24 @@ Vue.config.productionTip = false
 
 Vue.use(BootstrapVue)
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+router.beforeEach((to, from, next) => {
+  const currentUser = store.state.auth.user
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+  console.log(to.matched)
+  if (requiresAuth && !currentUser) {
+    next({ name: 'login' })
+  } else {
+    next()
+  }
+})
+
+store.dispatch('auth/authenticate')
+  .catch(() => {})
+  .then(() => {
+    // eslint-disable-next-line no-new
+    new Vue({
+      router,
+      store,
+      render: h => h(App)
+    }).$mount('#app')
+  })
