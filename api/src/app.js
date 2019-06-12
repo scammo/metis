@@ -15,6 +15,7 @@ const middleware = require('./middleware');
 const services = require('./services');
 const appHooks = require('./app.hooks');
 const channels = require('./channels');
+const bootstrap = require('./bootstrap');
 
 const mongoose = require('./mongoose');
 
@@ -54,4 +55,5 @@ app.use(express.errorHandler({ logger }));
 
 app.hooks(appHooks);
 
+app.configure(bootstrap);
 module.exports = app;
