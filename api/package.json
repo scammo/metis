@@ -27,7 +27,8 @@
     "eslint": "eslint src/. test/. --config .eslintrc.json",
     "dev": "nodemon src/",
     "start": "node src/",
-    "mocha": "mocha test/ --recursive --exit"
+    "mocha": "mocha test/ --recursive --exit",
+    "serve": "nodemon -L --inspect=0.0.0.0:9999 -e js,handlebars src/"
   },
   "dependencies": {
     "@feathersjs/configuration": "^2.0.6",
@@ -47,7 +48,7 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "mocha": "^5.2.0",
-    "nodemon": "^1.18.10",
+    "nodemon": "^1.19.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   }
