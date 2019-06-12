@@ -6,5 +6,29 @@
     "default": 10,
     "max": 50
   },
-  "mongodb": "mongodb://localhost:27017/metis"
+  "mongodb": "mongodb://localhost:27017/metis",
+  "authentication": {
+    "secret": "3060dbc7f67c4da35d1716f931433db89f6939cc495d09d0a5b696efe9bfbb0fdbbe5e9ad06b213d3b652e3da9311e648548c01c2870f8537252b8920f1f0eb0261507bf67b3b3fe115da3d37acd984900877a1ede68f419adf9cc11ee3fa806eaf089ce4afbccf958ca8ae05a8e17b2d24bc046c590070fbbb5e48af95401ffe0af7c6f0264bde261c7880b778763010884f95c57727ef5afeee103e588dc2a5f607caa28fde84346fa8a74cc84aa19547716ea0e0a5b8efb97e0bb46aaf10986b4ba13953b9c06e8a4c278c9c31d50de96ef89d2ca46203af05e80923a71066b4de02e36e8c14bccbb384c575835943a23c102d38a2d92f469d4a52587c620",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "user",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  }
 }
