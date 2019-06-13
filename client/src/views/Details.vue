@@ -18,7 +18,7 @@
                 Eckernförde
               </div>
               <div class="row grey">
-                <div class="col-2 font-weight-bold">
+                <div class="col-3 font-weight-bold">
                   Titel <br>
                   Kisten Nummer <br>
                   Gewicht <br>
