@@ -4,7 +4,7 @@
       <b-navbar
         toggleable="lg"
         type="dark"
-        variant="info"
+        class="blue"
       >
         <router-link
           :to="{ name: 'home'}"
