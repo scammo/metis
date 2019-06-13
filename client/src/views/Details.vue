@@ -33,8 +33,8 @@
               </div>
             </div>
             <div class="col-2">
-              <div class="float-right">
-                14
+              <div class="float-right font-weight-bold">
+                26
               </div>
             </div>
           </div>
