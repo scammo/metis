@@ -48,9 +48,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.login {
-  max-width: 350px;
-}
-</style>
