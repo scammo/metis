@@ -28,12 +28,12 @@
               />
             </b-nav-form>
           </b-navbar-nav>
-          <b-navbar-nav class="ml-auto">
+          <b-navbar-nav>
             <b-nav-item-dropdown right>
               <template slot="button-content">
                 <em>User</em>
               </template>
-              <b-dropdown-item href="/settings">
+              <b-dropdown-item :to="{ name: 'warehouselocation'}">
                 Settings
               </b-dropdown-item>
               <b-dropdown-item href="#">
