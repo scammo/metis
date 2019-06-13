@@ -37,9 +37,9 @@
             </thead>
             <tbody>
               <tr>
-                <td>Ort</td>
-                <td>Adresse</td>
-                <td>Einschrenkungen</td>
+                <td>Eckernförde</td>
+                <td>24340 Eckernförde, Musterstraße</td>
+                <td>Keine Paletten</td>
               </tr>
               <tr>
                 <td>Eckernförde</td>
