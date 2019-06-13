@@ -2,7 +2,7 @@
   <div>
     <div class="row justify-content-md-center py-2 ">
       <div class="border col-1">
-        <router-link :to="{ name: 'workgroups'}">
+        <router-link :to="{ name: 'details'}">
           <img
             src="../assets/box.png"
             class="img-fluid"
