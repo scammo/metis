@@ -1,10 +1,7 @@
 <template>
   <div id="app">
-    <div
-      id="nav"
-      class="p-3 mb-2 bg-primary text-white"
-    >
-      <form class="form-inline justify-content-md-center">
+    <nav class="navbar navbar-dark bg-primary">
+      <form class="form-inline mx-auto">
         <input
           class="form-control mr-sm-2"
           type="search"
@@ -12,7 +9,7 @@
           aria-label="Search"
         >
       </form>
-    </div>
+    </nav>
     <router-view />
   </div>
 </template>
