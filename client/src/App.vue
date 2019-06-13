@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-dark bg-primary">
+    <nav class="navbar navbar-dark navbg">
       <form class="form-inline mx-auto">
         <input
           class="form-control mr-sm-2"
