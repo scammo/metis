@@ -34,9 +34,11 @@ export default new Router({
     },
     {
       path: '/settings/warehouselocation',
-      name: 'workgroups',
-      component: () => import('./views/WorkGroups.vue'),
+      name: 'warehouselocation',
+      component: () => import('./views/WarehouseLocation.vue'),
       meta: { requiresAuth: true }
-    }
+    },
+    {
+      path: '/settings', redirect: { name: 'warehouselocation' } }
   ]
 })
