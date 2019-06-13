@@ -14,9 +14,14 @@
       </router-link>
       <div class="border col-6">
         <div class="float-left">
-          <h2>
-            KLAPPBARE BIG BOXEN GESCHLOSSEN
-          </h2>
+          <router-link
+            :to="{ name: 'details'}"
+            class="linknobackground pt-2"
+          >
+            <h2>
+              KLAPPBARE BIG BOXEN GESCHLOSSEN
+            </h2>
+          </router-link>
           Eckernförde<br>
           Inhalt: Wurst, Besteck, Glass<br>
           Arbeitskreis: OekA
