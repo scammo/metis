@@ -8,16 +8,22 @@
         type="email"
         required
         placeholder="Enter email"
-      ></b-form-input>
+      />
       <b-form-input
-        class="mt-1"
         id="input-password"
         v-model="login.password"
+        class="mt-1"
         type="password"
         required
         placeholder="Enter password"
-      ></b-form-input>
-      <b-button class="mt-2" variant="success" type="submit">Login</b-button>
+      />
+      <b-button
+        class="mt-2"
+        variant="success"
+        type="submit"
+      >
+        Login
+      </b-button>
     </b-form>
   </b-container>
 </template>
