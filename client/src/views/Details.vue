@@ -8,7 +8,7 @@
             class="img-fluid"
           >
         </div>
-        <div class="col-10 border pt-4 pl-4 float-left">
+        <div class="col-10 border pt-2 pl-4 float-left">
           <div class="row">
             <div class="col-10">
               <h2 class="text-uppercase">
