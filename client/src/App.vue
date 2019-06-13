@@ -1,15 +1,50 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-dark navbg">
-      <form class="form-inline mx-auto">
-        <input
-          class="form-control mr-sm-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
+    <div>
+      <b-navbar
+        toggleable="lg"
+        type="dark"
+        variant="info"
+      >
+        <router-link
+          :to="{ name: 'home'}"
         >
-      </form>
-    </nav>
+          <b-navbar-brand>
+            LAGERVERWALTUNG
+          </b-navbar-brand>
+        </router-link>
+        <b-navbar-toggle target="nav-collapse" />
+
+        <b-collapse
+          id="nav-collapse"
+          is-nav
+        >
+          <b-navbar-nav class="mx-auto">
+            <b-nav-form class="search">
+              <b-form-input
+                size="sm"
+                class="mr-sm-2"
+                placeholder="Search"
+              />
+            </b-nav-form>
+          </b-navbar-nav>
+          <b-navbar-nav class="ml-auto">
+            <b-nav-item-dropdown right>
+              <template slot="button-content">
+                <em>User</em>
+              </template>
+              <b-dropdown-item href="/settings">
+                Settings
+              </b-dropdown-item>
+              <b-dropdown-item href="#">
+                Sign Out
+              </b-dropdown-item>
+            </b-nav-item-dropdown>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div>
+
     <router-view />
   </div>
 </template>

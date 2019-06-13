@@ -4,7 +4,7 @@
       <div class="row">
         <router-link
           :to="{ name: 'warehouselocation'}"
-          class="border col-6 py-2 text-center router-link-active linkbackground"
+          class="border col-6 py-2 text-center router-link-active-now linkbackground"
         >
           <div>
             Lagerstandorte verwalten
