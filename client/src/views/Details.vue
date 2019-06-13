@@ -123,9 +123,3 @@
     </div>
   </div>
 </template>
-
-<style scoped lang="scss">
-.grey {
-  color: #6D6D6D;
-}
-</style>
