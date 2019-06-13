@@ -19,6 +19,11 @@ module.exports = async function (app) {
       email: 'momme.juergensen@codeanker.de',
       password: '1234'
     });
-
+    await app.service('user').create({
+      firstname: 'Jonas',
+      lastname: 'Riecken',
+      email: 'jonas.riecken@codeanker.de',
+      password: '1234'
+    });
   }
 };
