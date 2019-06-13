@@ -16,6 +16,25 @@ a.linkbackground:active {
   text-decoration: none;
   background: #DEDEDE;
     }
+a.linknobackground:link {
+   color: #000000;
+   text-decoration: none;
+    }
+a.linknobackground:visited {
+   color: #000000;
+   text-decoration: none;
+    }
+a.linknobackground:hover {
+    color: #000000;
+    text-decoration: none;
+    background: #EEEEEE;
+    }
+a.linknobackground:active {
+    color: #000000;
+    text-decoration: none;
+    background: #DEDEDE;
+    }
+
 .router-link-active-now {
   background: #EEEEEE;
     }
