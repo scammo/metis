@@ -68,7 +68,10 @@
                 <th scope="col">
                   Bestelllink
                 </th>
-                <th scope="col">
+                <th
+                  scope="col"
+                  width="10%"
+                >
                   <b-button
                     v-b-modal.CreateMaterialModalRef
                     class="p-0 table m-auto"
