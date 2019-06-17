@@ -36,6 +36,14 @@
               <div class="float-right font-weight-bold">
                 26
               </div>
+              <div>
+                <b-button
+                  v-b-modal.EditBoxModalRef
+                  class="p-0 table m-auto"
+                >
+                  Edit
+                </b-button>
+              </div>
             </div>
           </div>
         </div>
@@ -174,16 +182,19 @@
     </div>
     <edit-material-modal />
     <create-material-modal />
+    <edit-box-modal />
   </div>
 </template>
 <script>
 import EditMaterialModal from '../components/EditMaterialModal'
 import CreateMaterialModal from '../components/CreateMaterialModal'
+import EditBoxModal from '../components/EditBoxModal'
 
 export default {
   components: {
     EditMaterialModal,
-    CreateMaterialModal
+    CreateMaterialModal,
+    EditBoxModal
   }
 }
 </script>
