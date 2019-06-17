@@ -16,25 +16,27 @@ a.linkbackground:active {
   text-decoration: none;
   background: #DEDEDE;
     }
-a.linknobackground:link {
+.linknobackground:link {
    color: #000000;
    text-decoration: none;
     }
-a.linknobackground:visited {
+.linknobackground:visited {
    color: #000000;
    text-decoration: none;
     }
-a.linknobackground:hover {
+.linknobackground:hover {
     color: #000000;
     text-decoration: none;
     background: #EEEEEE;
     }
-a.linknobackground:active {
+.linknobackground:active {
     color: #000000;
     text-decoration: none;
     background: #DEDEDE;
     }
-
+.table {
+  width: 100%;
+}
 .router-link-active-now {
   background: #EEEEEE;
     }

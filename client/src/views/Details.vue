@@ -68,6 +68,14 @@
                 <th scope="col">
                   Bestelllink
                 </th>
+                <th scope="col">
+                  <b-button
+                    v-b-modal.CreateMaterialModalRef
+                    class="p-0 table m-auto"
+                  >
+                    +
+                  </b-button>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -79,6 +87,14 @@
                 <td>Ja</td>
                 <td>Nein</td>
                 <td>bueroshop24</td>
+                <td>
+                  <b-button
+                    v-b-modal.EditMaterialModalRef
+                    class="p-0 table m-auto"
+                  >
+                    Edit
+                  </b-button>
+                </td>
               </tr>
               <tr>
                 <td>Kleber</td>
@@ -88,6 +104,14 @@
                 <td>Ja</td>
                 <td>Nein</td>
                 <td>bueroshop24</td>
+                <td>
+                  <b-button
+                    v-b-modal.EditMaterialModalRef
+                    class="p-0 table m-auto"
+                  >
+                    Edit
+                  </b-button>
+                </td>
               </tr>
               <tr>
                 <td>Kleber</td>
@@ -97,6 +121,14 @@
                 <td>Ja</td>
                 <td>Nein</td>
                 <td>bueroshop24</td>
+                <td>
+                  <b-button
+                    v-b-modal.EditMaterialModalRef
+                    class="p-0 table m-auto"
+                  >
+                    Edit
+                  </b-button>
+                </td>
               </tr>
               <tr>
                 <td>Kleber</td>
@@ -106,6 +138,14 @@
                 <td>Ja</td>
                 <td>Nein</td>
                 <td>bueroshop24</td>
+                <td>
+                  <b-button
+                    v-b-modal.EditMaterialModalRef
+                    class="p-0 table m-auto"
+                  >
+                    Edit
+                  </b-button>
+                </td>
               </tr>
               <tr>
                 <td>Kleber</td>
@@ -115,11 +155,32 @@
                 <td>Ja</td>
                 <td>Nein</td>
                 <td>bueroshop24</td>
+                <td>
+                  <b-button
+                    v-b-modal.EditMaterialModalRef
+                    class="p-0 table m-auto"
+                  >
+                    Edit
+                  </b-button>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
+    <edit-material-modal />
+    <create-material-modal />
   </div>
 </template>
+<script>
+import EditMaterialModal from '../components/EditMaterialModal'
+import CreateMaterialModal from '../components/CreateMaterialModal'
+
+export default {
+  components: {
+    EditMaterialModal,
+    CreateMaterialModal
+  }
+}
+</script>
