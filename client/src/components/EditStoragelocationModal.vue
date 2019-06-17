@@ -1,9 +1,9 @@
 <template>
   <div>
     <b-modal
-      id="CreateStoragelocationModalRef"
-      ref="CreateStoragelocationModalRef"
-      title="Arbeitsgruppen Hinzufügen"
+      id="EditStoragelocationModalRef"
+      ref="EditStoragelocationModalRef"
+      title="Arbeitsgruppen Bearbeiten"
       hide-footer
     >
       <div>

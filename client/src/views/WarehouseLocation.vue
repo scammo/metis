@@ -33,6 +33,17 @@
                 <th scope="col">
                   Einschrenkungen
                 </th>
+                <th
+                  scope="col"
+                  width="10%"
+                >
+                  <b-button
+                    v-b-modal.CreateStoragelocationModalRef
+                    class="p-0 table m-auto"
+                  >
+                    +
+                  </b-button>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -40,21 +51,59 @@
                 <td>Eckernförde</td>
                 <td>24340 Eckernförde, Musterstraße</td>
                 <td>Keine Paletten</td>
+                <td>
+                  <b-button
+                    v-b-modal.EditStoragelocationModalRef
+                    class="p-0 table m-auto"
+                  >
+                    Edit
+                  </b-button>
+                </td>
               </tr>
               <tr>
                 <td>Eckernförde</td>
                 <td>24340 Eckernförde, Musterstraße</td>
                 <td>Keine Paletten</td>
+                <td>
+                  <b-button
+                    v-b-modal.EditStoragelocationModalRef
+                    class="p-0 table m-auto"
+                  >
+                    Edit
+                  </b-button>
+                </td>
               </tr>
               <tr>
                 <td>Eckernförde</td>
                 <td>24340 Eckernförde, Musterstraße 4</td>
                 <td>Keine Paletten</td>
+                <td>
+                  <b-button
+                    v-b-modal.EditStoragelocationModalRef
+                    class="p-0 table m-auto"
+                  >
+                    Edit
+                  </b-button>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
+    <edit-storagelocation-modal />
+    <create-storagelocation-modal />
   </div>
 </template>
+
+<script>
+import CreateStoragelocationModal from '../components/CreateStoragelocationModal'
+import EditStoragelocationModal from '../components/EditStoragelocationModal'
+
+export default {
+  components: {
+    CreateStoragelocationModal,
+    EditStoragelocationModal
+  }
+}
+</script>
