@@ -35,6 +35,17 @@
                 >
                   vollständiger Name
                 </th>
+                <th
+                  scope="col"
+                  width="10%"
+                >
+                  <b-button
+                    v-b-modal.CreateWorkgroupsModalRef
+                    class="p-0 table m-auto"
+                  >
+                    +
+                  </b-button>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -45,6 +56,14 @@
                 <td>
                   vollständiger Name
                 </td>
+                <td>
+                  <b-button
+                    v-b-modal.EditWorkgroupsModalRef
+                    class="p-0 table m-auto"
+                  >
+                    Edit
+                  </b-button>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -53,6 +72,14 @@
                 <td>
                   vollständiger Name
                 </td>
+                <td>
+                  <b-button
+                    v-b-modal.EditWorkgroupsModalRef
+                    class="p-0 table m-auto"
+                  >
+                    Edit
+                  </b-button>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -60,6 +87,14 @@
                 </td>
                 <td>
                   vollständiger Name
+                </td>
+                <td>
+                  <b-button
+                    v-b-modal.EditWorkgroupsModalRef
+                    class="p-0 table m-auto"
+                  >
+                    Edit
+                  </b-button>
                 </td>
               </tr>
             </tbody>
@@ -67,5 +102,19 @@
         </div>
       </div>
     </div>
+    <create-workgroups-modal />
+    <edit-workgroups-modal />
   </div>
 </template>
+<script>
+
+import CreateWorkgroupsModal from '../components/CreateWorkgroupsModal'
+import EditWorkgroupsModal from '../components/EditWorkgroupsModal'
+
+export default {
+  components: {
+    CreateWorkgroupsModal,
+    EditWorkgroupsModal
+  }
+}
+</script>
