@@ -6,7 +6,8 @@ module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const workgroups = new Schema({
-    name: { type: String, required: true }
+    name: { type: String, required: true },
+    abbreviation: { type: String, required: false }
   }, {
     timestamps: true
   });
