@@ -22,9 +22,11 @@
               KLAPPBARE BIG BOXEN GESCHLOSSEN
             </h2>
           </router-link>
-          Eckernförde<br>
-          Inhalt: Wurst, Besteck, Glass<br>
-          Arbeitskreis: OekA
+          <div class="grey">
+            Eckernförde<br>
+            Inhalt: Wurst, Besteck, Glass<br>
+            Arbeitskreis: OekA
+          </div>
         </div>
         <div class="float-right pt-1 font-weight-bold">
           26
