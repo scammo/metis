@@ -1,6 +1,5 @@
 <template>
   <div>
-    <pre>{{ workgroups }}</pre>
     <div class="container py-4">
       <div class="row">
         <router-link
@@ -20,7 +19,7 @@
           </div>
         </router-link>
       </div>
-      <div class="row px-2 pt-4  border">
+      <div class="row px-2 pt-4 border">
         <div class="col-12">
           <table class="table">
             <thead>
