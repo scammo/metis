@@ -72,7 +72,7 @@
           <div>
             <b-input
               v-model="oderlink"
-              type="url"
+              type="text"
               placeholder="https://example.com/"
             />
           </div>
@@ -107,26 +107,26 @@ export default {
     return {
       selectedMHD: null,
       optionsMHD: [
-        { value: null, text: 'Please select an option' },
+        { value: null, text: 'Wählen Sie eine Option aus' },
         { value: 'a', text: 'Ja' },
         { value: 'b', text: 'Nein' }
       ],
       selectedArbeitskreis: null,
       optionsArbeitskreis: [
-        { value: null, text: 'Please select an option' },
+        { value: null, text: 'Wählen Sie eine Option aus' },
         { value: 'a', text: 'Muster' },
         { value: 'b', text: 'Muster' },
         { value: 'c', text: 'Muster' },
         { value: 'd', text: 'Muster' }
       ],
       optionsEmpfindlichkeit: [
-        { value: null, text: 'Please select an option' },
+        { value: null, text: 'Wählen Sie eine Option aus' },
         { value: 'a', text: 'Nicht Empfindlich' },
         { value: 'b', text: 'Sehr Empfindlich' }
       ],
       selectedVerbrauchsgegenstand: null,
       optionsVerbrauchsgegenstand: [
-        { value: null, text: 'Please select an option' },
+        { value: null, text: 'Wählen Sie eine Option aus' },
         { value: 'a', text: 'Ja' },
         { value: 'b', text: 'Nein' }
       ],
