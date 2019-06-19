@@ -12,9 +12,9 @@ module.exports = function (app) {
     consumtion: { type: String, required: true },
     oderlink: { type: String, required: false },
     sensivity: { type: String, required: true },
-    workgroupid: { type: Schema.Types.ObjectId, required: true },
-    boxid: { type: Schema.Types.ObjectId, required: true },
-    tagsid: { type: Schema.Types.ObjectId, required: true }
+    workgroupid: { type: Schema.Types.ObjectId, required: false },
+    boxid: { type: Schema.Types.ObjectId, required: false },
+    tagsid: { type: Schema.Types.ObjectId, required: false }
   }, {
     timestamps: true
   });

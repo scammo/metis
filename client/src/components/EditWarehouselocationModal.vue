@@ -1,9 +1,9 @@
 <template>
   <div>
     <b-modal
-      id="EditStoragelocationModalRef"
-      ref="EditStoragelocationModalRef"
-      title="Arbeitsgruppen Bearbeiten"
+      id="EditWarehouselocationModalRef"
+      ref="EditWarehouselocationModalRef"
+      title="Lagerort Bearbeiten"
       hide-footer
     >
       <div>

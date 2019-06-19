@@ -106,15 +106,3 @@
     <edit-workgroups-modal />
   </div>
 </template>
-<script>
-
-import CreateWorkgroupsModal from '../components/CreateWorkgroupsModal'
-import EditWorkgroupsModal from '../components/EditWorkgroupsModal'
-
-export default {
-  components: {
-    CreateWorkgroupsModal,
-    EditWorkgroupsModal
-  }
-}
-</script>

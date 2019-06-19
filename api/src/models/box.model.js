@@ -8,7 +8,7 @@ module.exports = function (app) {
   const box = new Schema({
     title: { type: String, required: true },
     kind: { type: String, required: true },
-    weight: { type: String, required: true },
+    weight: { type: String, required: false },
     itemnumber: { type: String, required: true },
     warehouseid: { type: Schema.Types.ObjectId, required: true }
   }, {

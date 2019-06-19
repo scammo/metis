@@ -21,6 +21,17 @@
       </div>
       <div class="row px-2 pt-4  border">
         <div class="col-12">
+          <pre>{{ warehhouses }}</pre>
+          <pre
+            v-for="warehhouse in warehhouses.data"
+            :key="warehhouse._id"
+          >{{ warehhouse }}</pre>
+          <button @click="fetch()">
+            fetch
+          </button>
+          <button @click="create()">
+            create
+          </button>
           <table class="table">
             <thead>
               <tr>
@@ -38,7 +49,7 @@
                   width="10%"
                 >
                   <b-button
-                    v-b-modal.CreateStoragelocationModalRef
+                    v-b-modal.CreateWarehouselocationModalRef
                     class="p-0 table m-auto"
                   >
                     +
@@ -53,7 +64,7 @@
                 <td>Keine Paletten</td>
                 <td>
                   <b-button
-                    v-b-modal.EditStoragelocationModalRef
+                    v-b-modal.EditWarehouselocationModalRef
                     class="p-0 table m-auto"
                   >
                     Edit
@@ -66,7 +77,7 @@
                 <td>Keine Paletten</td>
                 <td>
                   <b-button
-                    v-b-modal.EditStoragelocationModalRef
+                    v-b-modal.EditWarehouselocationModalRef
                     class="p-0 table m-auto"
                   >
                     Edit
@@ -79,7 +90,7 @@
                 <td>Keine Paletten</td>
                 <td>
                   <b-button
-                    v-b-modal.EditStoragelocationModalRef
+                    v-b-modal.EditWarehouselocationModalRef
                     class="p-0 table m-auto"
                   >
                     Edit
@@ -91,19 +102,7 @@
         </div>
       </div>
     </div>
-    <edit-storagelocation-modal />
-    <create-storagelocation-modal />
+    <edit-warehouselocation-modal />
+    <create-warehouselocation-modal />
   </div>
 </template>
-
-<script>
-import CreateStoragelocationModal from '../components/CreateStoragelocationModal'
-import EditStoragelocationModal from '../components/EditStoragelocationModal'
-
-export default {
-  components: {
-    CreateStoragelocationModal,
-    EditStoragelocationModal
-  }
-}
-</script>

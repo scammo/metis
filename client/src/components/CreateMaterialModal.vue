@@ -7,74 +7,91 @@
       hide-footer
     >
       <div>
+        <pre
+          v-for="warehouse in warehouses.data"
+          :key="warehouse._id"
+        >{{ warehouse }}</pre>
         <div>
-          Name:
-        </div>
-        <div>
-          <b-input />
-        </div>
-        <div class="pt-2">
-          Anzahl:
-        </div>
-        <div>
-          <b-input />
-        </div>
-        <div class="pt-2">
-          MHD vorhanden:
-        </div>
-        <div>
-          <b-form-select
-            v-model="selectedMHD"
-            :options="optionsMHD"
-          />
-        </div>
-        <div class="pt-2">
-          MHD:
-        </div>
-        <div>
-          <b-input />
-        </div>
-        <div class="pt-2">
-          Arbeitskreis:
-        </div>
-        <div>
-          <b-form-select
-            v-model="selectedArbeitskreis"
-            :options="optionsArbeitskreis"
-          />
-        </div>
-        <div class="pt-2">
-          Empfindlichkeit:
-        </div>
-        <div>
-          <b-form-select
-            v-model="selectedEmpfindlichkeit"
-            :options="optionsEmpfindlichkeit"
-          />
-        </div>
-        <div class="pt-2">
-          Verbrauchsgegenstand:
-        </div>
-        <div>
-          <b-form-select
-            v-model="selectedVerbrauchsgegenstand"
-            :options="optionsVerbrauchsgegenstand"
-          />
-        </div>
-        <div class="pt-2">
-          Schlagwörter:
-        </div>
-        <div>
-          <b-input />
-        </div>
-        <div class="py-3">
-          <b-button
-            variant="primary"
-            size="sm"
-            class="float-right"
-          >
-            Speichern
-          </b-button>
+          <div>
+            Name:
+          </div>
+          <div>
+            <b-input
+              v-model="name"
+              type="text"
+            />
+          </div>
+          <div class="pt-2">
+            Anzahl:
+          </div>
+          <div>
+            <b-input
+              v-model="amount"
+              type="number"
+            />
+          </div>
+          <div class="pt-2">
+            MHD:
+          </div>
+          <div>
+            <b-input
+              v-model="BBD"
+              type="date"
+            />
+          </div>
+          <div class="pt-2">
+            Arbeitskreis:
+          </div>
+          <div>
+            <b-form-select
+              v-model="worktgoup"
+              :options="optionsArbeitskreis"
+            />
+          </div>
+          <div class="pt-2">
+            Empfindlichkeit:
+          </div>
+          <div>
+            <b-form-select
+              v-model="sensivity"
+              :options="optionsEmpfindlichkeit"
+            />
+          </div>
+          <div class="pt-2">
+            Verbrauchsgegenstand:
+          </div>
+          <div>
+            <b-form-select
+              v-model="consumtion"
+              :options="optionsVerbrauchsgegenstand"
+            />
+          </div>
+          <div>
+            Bestelllink
+          </div>
+          <div>
+            <b-input
+              v-model="oderlink"
+              type="url"
+              placeholder="https://example.com/"
+            />
+          </div>
+          <div class="pt-2">
+            Schlagwörter:
+          </div>
+          <div>
+            <b-input />
+          </div>
+          <div class="py-3">
+            <b-button
+              variant="primary"
+              size="sm"
+              class="float-right"
+              @click="create()"
+            >
+              Speichern
+            </b-button>
+          </div>
         </div>
       </div>
     </b-modal>
@@ -82,8 +99,11 @@
 </template>
 
 <script>
+import feathers from '../api'
+const materialsService = feathers.service('material')
+
 export default {
-  data () {
+  data: function () {
     return {
       selectedMHD: null,
       optionsMHD: [
@@ -99,7 +119,6 @@ export default {
         { value: 'c', text: 'Muster' },
         { value: 'd', text: 'Muster' }
       ],
-      selectedEmpfindlichkeit: null,
       optionsEmpfindlichkeit: [
         { value: null, text: 'Please select an option' },
         { value: 'a', text: 'Nicht Empfindlich' },
@@ -110,9 +129,19 @@ export default {
         { value: null, text: 'Please select an option' },
         { value: 'a', text: 'Ja' },
         { value: 'b', text: 'Nein' }
-      ]
+      ],
+      warehouses: {}
+    }
+  },
+  methods: {
+    async fetch () {
+      this.warehouses = await materialsService.find()
+    },
+    async create () {
+      await materialsService.create({ name: this.name, consumtion: this.consumtion, sensivity: this.sensivity, amount: this.amount, BBD: this.BBD, orderlink: this.orderlink })
+      await this.fetch()
     }
   }
-}
 
+}
 </script>

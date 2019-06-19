@@ -7,23 +7,28 @@
       hide-footer
     >
       <div>
+        <pre
+          v-for="workgroup in workgroups.data"
+          :key="workgroup._id"
+        >{{ workgroup }}</pre>
         <div class="pt-2">
           Abkürzung:
         </div>
         <div>
-          <b-input />
+          <b-input v-model="name" />
         </div>
         <div class="pt-2">
           vollständiger Name:
         </div>
         <div>
-          <b-input />
+          <b-input v-model="abbreviation" />
         </div>
         <div class="py-3">
           <b-button
             variant="primary"
             size="sm"
             class="float-right"
+            @click="create()"
           >
             Speichern
           </b-button>
@@ -32,3 +37,25 @@
     </b-modal>
   </div>
 </template>
+
+<script>
+import feathers from '../api'
+const workgroupsService = feathers.service('workgroups')
+
+export default {
+  data: function () {
+    return {
+      workgroups: {}
+    }
+  },
+  methods: {
+    async fetch () {
+      this.workgroups = await workgroupsService.find()
+    },
+    async create () {
+      await workgroupsService.create({ name: this.name, abbreviation: this.abbreviation })
+      await this.fetch()
+    }
+  }
+}
+</script>
