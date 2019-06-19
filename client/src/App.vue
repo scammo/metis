@@ -31,7 +31,7 @@
           <b-navbar-nav>
             <b-nav-item-dropdown right>
               <template slot="button-content">
-                <b>User</b>
+                User
               </template>
               <b-dropdown-item :to="{ name: 'warehouselocation'}">
                 Settings
