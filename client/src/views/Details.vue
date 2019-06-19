@@ -185,6 +185,7 @@
     <edit-box-modal />
   </div>
 </template>
+
 <script>
 import EditMaterialModal from '../components/EditMaterialModal'
 import CreateMaterialModal from '../components/CreateMaterialModal'
