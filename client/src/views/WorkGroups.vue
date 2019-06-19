@@ -1,5 +1,6 @@
 <template>
   <div>
+    <pre>{{ workgroups }}</pre>
     <div class="container py-4">
       <div class="row">
         <router-link
@@ -106,3 +107,15 @@
     <edit-workgroups-modal />
   </div>
 </template>
+<script>
+
+import CreateWorkgroupsModal from '../components/CreateWorkgroupsModal'
+import EditWorkgroupsModal from '../components/EditWorkgroupsModal'
+
+export default {
+  components: {
+    CreateWorkgroupsModal,
+    EditWorkgroupsModal
+  }
+}
+</script>

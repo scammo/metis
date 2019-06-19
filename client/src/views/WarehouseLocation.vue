@@ -21,17 +21,6 @@
       </div>
       <div class="row px-2 pt-4  border">
         <div class="col-12">
-          <pre>{{ warehhouses }}</pre>
-          <pre
-            v-for="warehhouse in warehhouses.data"
-            :key="warehhouse._id"
-          >{{ warehhouse }}</pre>
-          <button @click="fetch()">
-            fetch
-          </button>
-          <button @click="create()">
-            create
-          </button>
           <table class="table">
             <thead>
               <tr>
@@ -106,3 +95,15 @@
     <create-warehouselocation-modal />
   </div>
 </template>
+
+<script>
+import CreateWarehouselocationModal from '../components/CreateWarehouselocationModal'
+import EditWarehouselocationModal from '../components/EditWarehouselocationModal'
+
+export default {
+  components: {
+    CreateWarehouselocationModal,
+    EditWarehouselocationModal
+  }
+}
+</script>
