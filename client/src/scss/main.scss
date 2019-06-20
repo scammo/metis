@@ -59,3 +59,7 @@ a.linkbackground:active {
     color: #FFFFFF;
     background-color: #68BBFF;
 }
+.nowordwrap {
+  overflow: auto;
+  display: inline;
+}
