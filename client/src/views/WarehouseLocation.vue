@@ -37,12 +37,10 @@
                   scope="col"
                   width="10%"
                 >
-                  <b-button
+                  <i
                     v-b-modal.CreateWarehouselocationModalRef
-                    class="p-0 table m-auto"
-                  >
-                    +
-                  </b-button>
+                    class="fal fa-plus float-right"
+                  />
                 </th>
               </tr>
             </thead>
@@ -52,12 +50,10 @@
                 <td>24340 Eckernförde, Musterstraße</td>
                 <td>Keine Paletten</td>
                 <td>
-                  <b-button
+                  <i
                     v-b-modal.EditWarehouselocationModalRef
-                    class="p-0 table m-auto"
-                  >
-                    Edit
-                  </b-button>
+                    class="far fa-edit float-right"
+                  />
                 </td>
               </tr>
               <tr>
@@ -65,12 +61,10 @@
                 <td>24340 Eckernförde, Musterstraße</td>
                 <td>Keine Paletten</td>
                 <td>
-                  <b-button
+                  <i
                     v-b-modal.EditWarehouselocationModalRef
-                    class="p-0 table m-auto"
-                  >
-                    Edit
-                  </b-button>
+                    class="far fa-edit float-right"
+                  />
                 </td>
               </tr>
               <tr>
@@ -78,12 +72,10 @@
                 <td>24340 Eckernförde, Musterstraße 4</td>
                 <td>Keine Paletten</td>
                 <td>
-                  <b-button
+                  <i
                     v-b-modal.EditWarehouselocationModalRef
-                    class="p-0 table m-auto"
-                  >
-                    Edit
-                  </b-button>
+                    class="far fa-edit float-right"
+                  />
                 </td>
               </tr>
             </tbody>
