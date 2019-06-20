@@ -14,7 +14,7 @@ module.exports = function (app) {
     sensivity: { type: String, required: true },
     workgroupid: { type: Schema.Types.ObjectId, required: false },
     boxid: { type: Schema.Types.ObjectId, required: false },
-    tagsid: { type: Schema.Types.ObjectId, required: false }
+    tags: { type: Array, required: false }
   }, {
     timestamps: true
   });

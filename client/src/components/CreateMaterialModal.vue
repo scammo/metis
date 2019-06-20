@@ -17,7 +17,7 @@
           </div>
           <div>
             <b-input
-              v-model="name"
+              v-model="material.name"
               type="text"
             />
           </div>
@@ -26,7 +26,7 @@
           </div>
           <div>
             <b-input
-              v-model="amount"
+              v-model="material.amount"
               type="number"
             />
           </div>
@@ -35,7 +35,7 @@
           </div>
           <div>
             <b-input
-              v-model="BBD"
+              v-model="material.BBD"
               type="date"
             />
           </div>
@@ -44,7 +44,7 @@
           </div>
           <div>
             <b-form-select
-              v-model="worktgoup"
+              v-model="material.worktgoup"
               :options="optionsArbeitskreis"
             />
           </div>
@@ -53,7 +53,7 @@
           </div>
           <div>
             <b-form-select
-              v-model="sensivity"
+              v-model="material.sensivity"
               :options="optionsEmpfindlichkeit"
             />
           </div>
@@ -62,7 +62,7 @@
           </div>
           <div>
             <b-form-select
-              v-model="consumtion"
+              v-model="material.consumtion"
               :options="optionsVerbrauchsgegenstand"
             />
           </div>
@@ -71,7 +71,7 @@
           </div>
           <div>
             <b-input
-              v-model="oderlink"
+              v-model="material.oderlink"
               type="text"
               placeholder="https://example.com/"
             />
@@ -80,7 +80,7 @@
             Schlagwörter:
           </div>
           <div>
-            <b-input />
+            <tag-edit :tags="material.tags" />
           </div>
           <div class="py-3">
             <b-button
@@ -100,18 +100,31 @@
 
 <script>
 import feathers from '../api'
+import TagEdit from './TagEdit'
 const materialsService = feathers.service('material')
 
 export default {
+  components: {
+    TagEdit
+  },
   data: function () {
     return {
-      selectedMHD: null,
+      material: {
+        selectedMHD: null,
+        selectedArbeitskreis: null,
+        selectedVerbrauchsgegenstand: null,
+        tags: []
+      },
+      optionsEmpfindlichkeit: [
+        { value: null, text: 'Wählen Sie eine Option aus' },
+        { value: 'a', text: 'Nicht Empfindlich' },
+        { value: 'b', text: 'Sehr Empfindlich' }
+      ],
       optionsMHD: [
         { value: null, text: 'Wählen Sie eine Option aus' },
         { value: 'a', text: 'Ja' },
         { value: 'b', text: 'Nein' }
       ],
-      selectedArbeitskreis: null,
       optionsArbeitskreis: [
         { value: null, text: 'Wählen Sie eine Option aus' },
         { value: 'a', text: 'Muster' },
@@ -119,12 +132,6 @@ export default {
         { value: 'c', text: 'Muster' },
         { value: 'd', text: 'Muster' }
       ],
-      optionsEmpfindlichkeit: [
-        { value: null, text: 'Wählen Sie eine Option aus' },
-        { value: 'a', text: 'Nicht Empfindlich' },
-        { value: 'b', text: 'Sehr Empfindlich' }
-      ],
-      selectedVerbrauchsgegenstand: null,
       optionsVerbrauchsgegenstand: [
         { value: null, text: 'Wählen Sie eine Option aus' },
         { value: 'a', text: 'Ja' },
@@ -138,7 +145,7 @@ export default {
       this.warehouses = await materialsService.find()
     },
     async create () {
-      await materialsService.create({ name: this.name, consumtion: this.consumtion, sensivity: this.sensivity, amount: this.amount, BBD: this.BBD, orderlink: this.orderlink })
+      await materialsService.create(this.material)
       await this.fetch()
     }
   }
