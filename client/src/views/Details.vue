@@ -36,13 +36,12 @@
               <div class="float-right font-weight-bold">
                 26
               </div>
-              <div>
-                <b-button
+              <br>
+              <div class="float-right">
+                <i
                   v-b-modal.EditBoxModalRef
-                  class="p-0 table m-auto"
-                >
-                  Edit
-                </b-button>
+                  class="far fa-edit float-right pointer"
+                />
               </div>
             </div>
           </div>
