@@ -9,11 +9,11 @@
       <span
         v-for="(tag, index) in tags"
         :key="index"
-        class="badge-pill badge-secondary"
+        class="badge-pill badge-secondary overflow"
       >{{ tag }} <i
         class="fal fa-times"
         @click="removeTag(index)"
-      /></span>
+      /> </span>
     </div>
   </div>
 </template>
