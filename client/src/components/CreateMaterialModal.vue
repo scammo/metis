@@ -8,16 +8,16 @@
     >
       <div>
         <pre
-          v-for="warehouse in warehouses.data"
-          :key="warehouse._id"
-        >{{ warehouse }}</pre>
+          v-for="material in materials.data"
+          :key="material._id"
+        >{{ material }}</pre>
         <div>
           <div>
             Name:
           </div>
           <div>
             <b-input
-              v-model="material.name"
+              v-model="materialinput.name"
               type="text"
             />
           </div>
@@ -26,7 +26,7 @@
           </div>
           <div>
             <b-input
-              v-model="material.amount"
+              v-model="materialinput.amount"
               type="number"
             />
           </div>
@@ -35,7 +35,7 @@
           </div>
           <div>
             <b-input
-              v-model="material.BBD"
+              v-model="materialinput.BBD"
               type="date"
             />
           </div>
@@ -44,7 +44,7 @@
           </div>
           <div>
             <b-form-select
-              v-model="material.worktgoup"
+              v-model="materialinput.worktgoup"
               :options="optionsArbeitskreis"
             />
           </div>
@@ -53,7 +53,7 @@
           </div>
           <div>
             <b-form-select
-              v-model="material.sensivity"
+              v-model="materialinput.sensivity"
               :options="optionsEmpfindlichkeit"
             />
           </div>
@@ -62,7 +62,7 @@
           </div>
           <div>
             <b-form-select
-              v-model="material.consumtion"
+              v-model="materialinput.consumtion"
               :options="optionsVerbrauchsgegenstand"
             />
           </div>
@@ -71,7 +71,7 @@
           </div>
           <div>
             <b-input
-              v-model="material.oderlink"
+              v-model="materialinput.oderlink"
               type="text"
               placeholder="https://example.com/"
             />
@@ -80,7 +80,7 @@
             Schlagwörter:
           </div>
           <div>
-            <tag-edit :tags="material.tags" />
+            <tag-edit :tags="materialinput.tags" />
           </div>
           <div class="py-3">
             <b-button
@@ -109,7 +109,7 @@ export default {
   },
   data: function () {
     return {
-      material: {
+      materialinput: {
         selectedMHD: null,
         selectedArbeitskreis: null,
         selectedVerbrauchsgegenstand: null,
@@ -137,15 +137,15 @@ export default {
         { value: 'a', text: 'Ja' },
         { value: 'b', text: 'Nein' }
       ],
-      warehouses: {}
+      materials: {}
     }
   },
   methods: {
     async fetch () {
-      this.warehouses = await materialsService.find()
+      this.materials = await materialsService.find()
     },
     async create () {
-      await materialsService.create(this.material)
+      await materialsService.create(this.materialinput)
       await this.fetch()
     }
   }
