@@ -39,12 +39,10 @@
                   scope="col"
                   width="10%"
                 >
-                  <b-button
+                  <i
                     v-b-modal.CreateWorkgroupsModalRef
-                    class="p-0 table m-auto"
-                  >
-                    +
-                  </b-button>
+                    class="fal fa-plus float-right"
+                  />
                 </th>
               </tr>
             </thead>
@@ -57,12 +55,10 @@
                   vollständiger Name
                 </td>
                 <td>
-                  <b-button
+                  <i
                     v-b-modal.EditWorkgroupsModalRef
-                    class="p-0 table m-auto"
-                  >
-                    Edit
-                  </b-button>
+                    class="far fa-edit float-right"
+                  />
                 </td>
               </tr>
               <tr>
@@ -73,12 +69,10 @@
                   vollständiger Name
                 </td>
                 <td>
-                  <b-button
+                  <i
                     v-b-modal.EditWorkgroupsModalRef
-                    class="p-0 table m-auto"
-                  >
-                    Edit
-                  </b-button>
+                    class="far fa-edit float-right"
+                  />
                 </td>
               </tr>
               <tr>
@@ -89,12 +83,10 @@
                   vollständiger Name
                 </td>
                 <td>
-                  <b-button
+                  <i
                     v-b-modal.EditWorkgroupsModalRef
-                    class="p-0 table m-auto"
-                  >
-                    Edit
-                  </b-button>
+                    class="far fa-edit float-right"
+                  />
                 </td>
               </tr>
             </tbody>
