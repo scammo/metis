@@ -82,7 +82,7 @@
                 >
                   <i
                     v-b-modal.CreateMaterialModalRef
-                    class="fal fa-plus float-right"
+                    class="fal fa-plus float-right pointer"
                   />
                 </th>
               </tr>
@@ -99,7 +99,7 @@
                 <td>
                   <i
                     v-b-modal.EditMaterialModalRef
-                    class="far fa-edit float-right"
+                    class="far fa-edit float-right pointer"
                   />
                 </td>
               </tr>
@@ -114,7 +114,7 @@
                 <td>
                   <i
                     v-b-modal.EditMaterialModalRef
-                    class="far fa-edit float-right"
+                    class="far fa-edit float-right pointer"
                   />
                 </td>
               </tr>
@@ -129,7 +129,7 @@
                 <td>
                   <i
                     v-b-modal.EditMaterialModalRef
-                    class="far fa-edit float-right"
+                    class="far fa-edit float-right pointer"
                   />
                 </td>
               </tr>
@@ -144,7 +144,7 @@
                 <td>
                   <i
                     v-b-modal.EditMaterialModalRef
-                    class="far fa-edit float-right"
+                    class="far fa-edit float-right pointer"
                   />
                 </td>
               </tr>
@@ -159,7 +159,7 @@
                 <td>
                   <i
                     v-b-modal.EditMaterialModalRef
-                    class="far fa-edit float-right"
+                    class="far fa-edit float-right pointer"
                   />
                 </td>
               </tr>

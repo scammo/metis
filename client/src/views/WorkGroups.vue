@@ -41,7 +41,7 @@
                 >
                   <i
                     v-b-modal.CreateWorkgroupsModalRef
-                    class="fal fa-plus float-right"
+                    class="fal fa-plus float-right pointer"
                   />
                 </th>
               </tr>
@@ -57,7 +57,7 @@
                 <td>
                   <i
                     v-b-modal.EditWorkgroupsModalRef
-                    class="far fa-edit float-right"
+                    class="far fa-edit float-right pointer"
                   />
                 </td>
               </tr>
@@ -71,7 +71,7 @@
                 <td>
                   <i
                     v-b-modal.EditWorkgroupsModalRef
-                    class="far fa-edit float-right"
+                    class="far fa-edit float-right pointer"
                   />
                 </td>
               </tr>
@@ -85,7 +85,7 @@
                 <td>
                   <i
                     v-b-modal.EditWorkgroupsModalRef
-                    class="far fa-edit float-right"
+                    class="far fa-edit float-right pointer"
                   />
                 </td>
               </tr>
