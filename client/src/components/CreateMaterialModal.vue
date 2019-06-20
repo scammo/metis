@@ -116,24 +116,20 @@ export default {
         tags: []
       },
       optionsEmpfindlichkeit: [
-        { value: null, text: 'Wählen Sie eine Option aus' },
         { value: 'a', text: 'Nicht Empfindlich' },
         { value: 'b', text: 'Sehr Empfindlich' }
       ],
       optionsMHD: [
-        { value: null, text: 'Wählen Sie eine Option aus' },
         { value: 'a', text: 'Ja' },
         { value: 'b', text: 'Nein' }
       ],
       optionsArbeitskreis: [
-        { value: null, text: 'Wählen Sie eine Option aus' },
         { value: 'a', text: 'Muster' },
         { value: 'b', text: 'Muster' },
         { value: 'c', text: 'Muster' },
         { value: 'd', text: 'Muster' }
       ],
       optionsVerbrauchsgegenstand: [
-        { value: null, text: 'Wählen Sie eine Option aus' },
         { value: 'a', text: 'Ja' },
         { value: 'b', text: 'Nein' }
       ],
