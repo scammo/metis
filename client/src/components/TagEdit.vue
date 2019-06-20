@@ -9,7 +9,7 @@
       <span
         v-for="(tag, index) in tags"
         :key="index"
-        class="badge-pill badge-secondary overflow"
+        class="badge-pill badge-secondary nowordwrap"
       >{{ tag }} <i
         class="fal fa-times"
         @click="removeTag(index)"
