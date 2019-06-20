@@ -87,7 +87,7 @@
               variant="primary"
               size="sm"
               class="float-right"
-              @click="create()"
+              @click="create(), hide()"
             >
               Speichern
             </b-button>
@@ -142,7 +142,7 @@ export default {
     },
     async create () {
       await materialsService.create(this.materialinput)
-      await this.fetch()
+      await this.$bvModal.hide('CreateMaterialModalRef')
     }
   }
 }
