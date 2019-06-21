@@ -53,7 +53,7 @@
               variant="primary"
               size="sm"
               class="float-right"
-              @click="create(), hide()"
+              @click="create()"
             >
               Speichern
             </b-button>
