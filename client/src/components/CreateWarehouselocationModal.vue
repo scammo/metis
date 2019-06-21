@@ -16,19 +16,19 @@
             Ort:
           </div>
           <div>
-            <b-input v-model="name" />
+            <b-input v-model="warehouseinput.name" />
           </div>
           <div class="pt-2">
             Adresse:
           </div>
           <div>
-            <b-input v-model="adress" />
+            <b-input v-model="warehouseinput.adress" />
           </div>
           <div class="pt-2">
             Besonderheiten:
           </div>
           <div>
-            <b-input v-model="particularities" />
+            <b-input v-model="warehouseinput.particularities" />
           </div>
           <div class="py-3">
             <b-button
@@ -53,7 +53,8 @@ const warehousesService = feathers.service('warehouse')
 export default {
   data: function () {
     return {
-      warehouses: {}
+      warehouses: {},
+      warehouseinput: {}
     }
   },
   methods: {
@@ -61,8 +62,8 @@ export default {
       this.warehouses = await warehousesService.find()
     },
     async create () {
-      await warehousesService.create({ name: this.name, adress: this.adress, particularities: this.particularities })
-      await this.fetch()
+      await warehousesService.create(this.warehouseinput)
+      await this.$bvModal.hide('CreateWarehouselocationModalRef')
     }
   }
 }

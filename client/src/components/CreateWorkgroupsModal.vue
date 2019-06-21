@@ -15,13 +15,13 @@
           Abkürzung:
         </div>
         <div>
-          <b-input v-model="name" />
+          <b-input v-model="workgroupsinput.name" />
         </div>
         <div class="pt-2">
           vollständiger Name:
         </div>
         <div>
-          <b-input v-model="abbreviation" />
+          <b-input v-model="workgroupsinput.abbreviation" />
         </div>
         <div class="py-3">
           <b-button
@@ -45,7 +45,8 @@ const workgroupsService = feathers.service('workgroups')
 export default {
   data: function () {
     return {
-      workgroups: {}
+      workgroups: {},
+      workgroupsinput: {}
     }
   },
   methods: {
@@ -53,8 +54,8 @@ export default {
       this.workgroups = await workgroupsService.find()
     },
     async create () {
-      await workgroupsService.create({ name: this.name, abbreviation: this.abbreviation })
-      await this.fetch()
+      await workgroupsService.create(this.workgroupsinput)
+      await this.$bvModal.hide('CreateWorkgroupsModalRef')
     }
   }
 }
