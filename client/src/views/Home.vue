@@ -1,7 +1,15 @@
 <template>
   <div>
     <div class="container">
-      <div class="row py-4">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-around pt-4">
+          <i
+            v-b-modal.CreateBoxModalRef
+            class="fal fa-plus float-right pointer"
+          />
+        </div>
+      </div>
+      <div class="row pb-4 pt-2">
         <router-link
           :to="{ name: 'details'}"
           class="col-2 float-left border"
@@ -44,5 +52,16 @@
         </div>
       </div>
     </div>
+    <create-box-modal />
   </div>
 </template>
+
+<script>
+import CreateBoxModal from '../components/CreateBoxModal'
+
+export default {
+  components: {
+    CreateBoxModal
+  }
+}
+</script>
