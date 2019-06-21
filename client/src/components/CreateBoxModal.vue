@@ -36,7 +36,7 @@
           <div>
             <b-input
               v-model="boxinput.itemnumber"
-              type="text"
+              type="number"
             />
           </div>
           <div class="pt-2">

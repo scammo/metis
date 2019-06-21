@@ -8,7 +8,7 @@ module.exports = function (app) {
   const box = new Schema({
     name: { type: String, required: true },
     kind: { type: String, required: true },
-    itemnumber: { type: String, required: true },
+    itemnumber: { type: Number, required: true },
     warehouseid: { type: String, required: true } /*type: Schema.Types.ObjectId, required: true*/
   }, {
     timestamps: true
