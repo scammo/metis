@@ -24,13 +24,13 @@
             Eckernförde
           </div>
           <div class="row grey">
-            <div class="col-3 font-weight-bold">
+            <div class="col-5 font-weight-bold">
               Titel <br>
-              Kisten Nummer <br>
+              Kistennummer <br>
               Gewicht <br>
               Typ
             </div>
-            <div class="col-4">
+            <div class="col-7">
               Titel <br>
               26 <br>
               schwer <br>
