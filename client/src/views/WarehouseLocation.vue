@@ -45,39 +45,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Eckernförde</td>
-                <td>24340 Eckernförde, Musterstraße</td>
-                <td>Keine Paletten</td>
-                <td>
-                  <i
-                    v-b-modal.EditWarehouselocationModalRef
-                    class="far fa-edit float-right pointer"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>Eckernförde</td>
-                <td>24340 Eckernförde, Musterstraße</td>
-                <td>Keine Paletten</td>
-                <td>
-                  <i
-                    v-b-modal.EditWarehouselocationModalRef
-                    class="far fa-edit float-right pointer"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>Eckernförde</td>
-                <td>24340 Eckernförde, Musterstraße 4</td>
-                <td>Keine Paletten</td>
-                <td>
-                  <i
-                    v-b-modal.EditWarehouselocationModalRef
-                    class="far fa-edit float-right pointer"
-                  />
-                </td>
-              </tr>
+              <ListWarehouselocation />
             </tbody>
           </table>
         </div>
@@ -91,11 +59,13 @@
 <script>
 import CreateWarehouselocationModal from '../components/CreateWarehouselocationModal'
 import EditWarehouselocationModal from '../components/EditWarehouselocationModal'
+import ListWarehouselocation from '../components/ListWarehouselocation'
 
 export default {
   components: {
     CreateWarehouselocationModal,
-    EditWarehouselocationModal
+    EditWarehouselocationModal,
+    ListWarehouselocation
   }
 }
 </script>
