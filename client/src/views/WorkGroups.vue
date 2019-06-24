@@ -47,48 +47,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  Abkürzung
-                </td>
-                <td>
-                  vollständiger Name
-                </td>
-                <td>
-                  <i
-                    v-b-modal.EditWorkgroupsModalRef
-                    class="far fa-edit float-right pointer"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Abkürzung
-                </td>
-                <td>
-                  vollständiger Name
-                </td>
-                <td>
-                  <i
-                    v-b-modal.EditWorkgroupsModalRef
-                    class="far fa-edit float-right pointer"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Abkürzung
-                </td>
-                <td>
-                  vollständiger Name
-                </td>
-                <td>
-                  <i
-                    v-b-modal.EditWorkgroupsModalRef
-                    class="far fa-edit float-right pointer"
-                  />
-                </td>
-              </tr>
+              <ListWorkGroups />
             </tbody>
           </table>
         </div>
@@ -102,11 +61,13 @@
 
 import CreateWorkgroupsModal from '../components/CreateWorkgroupsModal'
 import EditWorkgroupsModal from '../components/EditWorkgroupsModal'
+import ListWorkGroups from '../components/ListWorkGroups'
 
 export default {
   components: {
     CreateWorkgroupsModal,
-    EditWorkgroupsModal
+    EditWorkgroupsModal,
+    ListWorkGroups
   }
 }
 </script>
