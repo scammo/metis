@@ -18,13 +18,13 @@
                 Eckernförde
               </div>
               <div class="row grey">
-                <div class="col-3 font-weight-bold">
+                <div class="col-5 font-weight-bold">
                   Titel <br>
-                  Kisten Nummer <br>
+                  Kistennummer <br>
                   Gewicht <br>
                   Typ
                 </div>
-                <div class="col-4">
+                <div class="col-7">
                   Titel <br>
                   26 <br>
                   schwer <br>
@@ -87,81 +87,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Kleber</td>
-                <td>3</td>
-                <td>/</td>
-                <td>OekA</td>
-                <td>Ja</td>
-                <td>Nein</td>
-                <td>bueroshop24</td>
-                <td>
-                  <i
-                    v-b-modal.EditMaterialModalRef
-                    class="far fa-edit float-right pointer"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>Kleber</td>
-                <td>3</td>
-                <td>/</td>
-                <td>OekA</td>
-                <td>Ja</td>
-                <td>Nein</td>
-                <td>bueroshop24</td>
-                <td>
-                  <i
-                    v-b-modal.EditMaterialModalRef
-                    class="far fa-edit float-right pointer"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>Kleber</td>
-                <td>3</td>
-                <td>/</td>
-                <td>OekA</td>
-                <td>Ja</td>
-                <td>Nein</td>
-                <td>bueroshop24</td>
-                <td>
-                  <i
-                    v-b-modal.EditMaterialModalRef
-                    class="far fa-edit float-right pointer"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>Kleber</td>
-                <td>3</td>
-                <td>/</td>
-                <td>OekA</td>
-                <td>Ja</td>
-                <td>Nein</td>
-                <td>bueroshop24</td>
-                <td>
-                  <i
-                    v-b-modal.EditMaterialModalRef
-                    class="far fa-edit float-right pointer"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>Kleber</td>
-                <td>3</td>
-                <td>/</td>
-                <td>OekA</td>
-                <td>Ja</td>
-                <td>Nein</td>
-                <td>bueroshop24</td>
-                <td>
-                  <i
-                    v-b-modal.EditMaterialModalRef
-                    class="far fa-edit float-right pointer"
-                  />
-                </td>
-              </tr>
+              <ListMaterials />
             </tbody>
           </table>
         </div>
@@ -177,12 +103,14 @@
 import EditMaterialModal from '../components/EditMaterialModal'
 import CreateMaterialModal from '../components/CreateMaterialModal'
 import EditBoxModal from '../components/EditBoxModal'
+import ListMaterials from '../components/ListMaterials'
 
 export default {
   components: {
     EditMaterialModal,
     CreateMaterialModal,
-    EditBoxModal
+    EditBoxModal,
+    ListMaterials
   }
 }
 </script>
