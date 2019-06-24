@@ -23,7 +23,12 @@
           <div class="row">
             <div class="col-10">
               <h2 class="text-uppercase">
-                Klappbare Big Box geschlossen
+                <router-link
+                  :to="{ name: 'details'}"
+                  class="linknobackground"
+                >
+                  Klappbare Big Box geschlossen
+                </router-link>
               </h2>
               <div class="grey">
                 Eckernförde
