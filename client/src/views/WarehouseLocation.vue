@@ -31,7 +31,7 @@
                   Adresse
                 </th>
                 <th scope="col">
-                  Einschrenkungen
+                  Einschränkungen
                 </th>
                 <th
                   scope="col"
