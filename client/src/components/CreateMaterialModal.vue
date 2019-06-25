@@ -7,10 +7,6 @@
       hide-footer
     >
       <div>
-        <pre
-          v-for="material in materials.data"
-          :key="material._id"
-        >{{ material }}</pre>
         <div>
           <div>
             Name:
