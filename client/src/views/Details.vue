@@ -51,45 +51,7 @@
         class="row"
       >
         <div class="col-12 border">
-          <table class="table table-borderless">
-            <thead>
-              <tr>
-                <th scope="col">
-                  Material
-                </th>
-                <th scope="col">
-                  Anzahl
-                </th>
-                <th scope="col">
-                  MHD
-                </th>
-                <th scope="col">
-                  Arbeitskreis
-                </th>
-                <th scope="col">
-                  Verbrauch
-                </th>
-                <th scope="col">
-                  leichte Brechbarkeit
-                </th>
-                <th scope="col">
-                  Bestelllink
-                </th>
-                <th
-                  scope="col"
-                  width="10%"
-                >
-                  <i
-                    v-b-modal.CreateMaterialModalRef
-                    class="fal fa-plus float-right pointer"
-                  />
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <ListMaterials />
-            </tbody>
-          </table>
+          <ListMaterials />
         </div>
       </div>
     </div>
