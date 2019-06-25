@@ -11,7 +11,6 @@
       </div>
       <ListBoxes />
       <create-box-modal />
-      <list-box />
     </div>
   </div>
 </template>
