@@ -9,6 +9,11 @@ Vue.use(FeathersVuex)
 
 export default new Vuex.Store({
   plugins: [
+    service('box'),
+    service('materials'),
+    service('tags'),
+    service('warehouse'),
+    service('workgroups'),
     service('user'),
     auth({ userService: 'user' })
   ],
