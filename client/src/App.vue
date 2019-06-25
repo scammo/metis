@@ -44,7 +44,6 @@
         </b-collapse>
       </b-navbar>
     </div>
-
     <router-view />
   </div>
 </template>
