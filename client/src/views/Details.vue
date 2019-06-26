@@ -20,9 +20,8 @@
               <div class="row grey">
                 <div class="col-5 font-weight-bold">
                   Titel <br>
-                  Kistennummer <br>
                   Gewicht <br>
-                  Typ
+                  Art
                 </div>
                 <div class="col-7">
                   Titel <br>
