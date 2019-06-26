@@ -30,14 +30,13 @@
             </div>
             <div class="row grey">
               <div class="col-5 font-weight-bold">
-                Typ <br>
+                Art <br>
                 Kistennummer <br>
                 Gewicht <br>
-                Typ
+                Lagerstandort
               </div>
               <div class="col-7">
                 {{ box.kind }} <br>
-                {{ box.itemnumber }} <br>
                 schwer <br>
                 {{ box.warehouseid }}
               </div>
@@ -45,7 +44,7 @@
           </div>
           <div class="col-2">
             <div class="float-right font-weight-bold">
-              26
+              {{ box.itemnumber }}
             </div>
           </div>
         </div>
