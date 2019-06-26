@@ -31,7 +31,6 @@
             <div class="row grey">
               <div class="col-5 font-weight-bold">
                 Art <br>
-                Kistennummer <br>
                 Gewicht <br>
                 Lagerstandort
               </div>
