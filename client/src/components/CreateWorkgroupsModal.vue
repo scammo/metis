@@ -7,10 +7,6 @@
       hide-footer
     >
       <div>
-        <pre
-          v-for="workgroup in workgroups.data"
-          :key="workgroup._id"
-        >{{ workgroup }}</pre>
         <div class="pt-2">
           Abkürzung:
         </div>

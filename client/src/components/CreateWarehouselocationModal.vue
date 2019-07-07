@@ -7,10 +7,6 @@
       hide-footer
     >
       <div>
-        <pre
-          v-for="warehouse in warehouses.data"
-          :key="warehouse._id"
-        >{{ warehouse }}</pre>
         <div>
           <div class="pt-2">
             Ort:

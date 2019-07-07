@@ -21,35 +21,7 @@
       </div>
       <div class="row px-2 pt-4 border">
         <div class="col-12">
-          <table class="table">
-            <thead>
-              <tr>
-                <th
-                  scope="col"
-                  width="25%"
-                >
-                  Abkürzung
-                </th>
-                <th
-                  scope="col"
-                >
-                  vollständiger Name
-                </th>
-                <th
-                  scope="col"
-                  width="10%"
-                >
-                  <i
-                    v-b-modal.CreateWorkgroupsModalRef
-                    class="fal fa-plus float-right pointer"
-                  />
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <ListWorkGroups />
-            </tbody>
-          </table>
+          <ListWorkGroups />
         </div>
       </div>
     </div>

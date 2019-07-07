@@ -21,33 +21,7 @@
       </div>
       <div class="row px-2 pt-4 border">
         <div class="col-12">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">
-                  Ort
-                </th>
-                <th scope="col">
-                  Adresse
-                </th>
-                <th scope="col">
-                  Einschrenkungen
-                </th>
-                <th
-                  scope="col"
-                  width="10%"
-                >
-                  <i
-                    v-b-modal.CreateWarehouselocationModalRef
-                    class="fal fa-plus float-right pointer"
-                  />
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <ListWarehouselocation />
-            </tbody>
-          </table>
+          <ListWarehouselocation />
         </div>
       </div>
     </div>

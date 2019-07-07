@@ -7,10 +7,6 @@
       hide-footer
     >
       <div>
-        <pre
-          v-for="box in boxes.data"
-          :key="box._id"
-        >{{ box }}</pre>
         <div>
           <div>
             Titel:
