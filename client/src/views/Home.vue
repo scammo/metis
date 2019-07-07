@@ -1,17 +1,14 @@
 <template>
   <div>
     <div class="container">
-      <div class="row">
-        <div class="col-12 d-flex justify-content-around pt-4">
-          <i
-            v-b-modal.CreateBoxModalRef
-            class="fal fa-plus float-right pointer"
-          />
+        <div class="d-flex justify-content-end pt-4">
+          <span v-b-modal.CreateBoxModalRef class="pointer">  
+            <i
+            class="fas fa-plus-circle"
+          /> Kiste anlegen </span>
         </div>
-      </div>
       <ListBoxes />
       <create-box-modal />
-      <list-box />
     </div>
   </div>
 </template>

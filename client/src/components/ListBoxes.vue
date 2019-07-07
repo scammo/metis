@@ -2,17 +2,17 @@
   <div class="row pb-4 pt-2">
     <router-link
       :to="{ name: 'details'}"
-      class="col-2 float-left border"
+      class="col-2"
     >
       <img
-        src="../assets/box.png"
+        src="https://www.auer-packaging.com/images/products/800/Eurobeh%C3%A4lter-mit-Scharnierdeckel-AUER--ed_64-32_01.jpg"
         class="img-fluid"
       >
     </router-link>
-    <div class="col-10 border py-2 pl-4 float-left">
+    <div class="col-10 py-2 pl-4">
       <div class="row">
         <div class="col-10">
-          <h2 class="text-uppercase">
+          <h2>
             <router-link
               :to="{ name: 'details'}"
               class="linknobackground"
