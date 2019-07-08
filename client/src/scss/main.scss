@@ -1,5 +1,14 @@
 @import "~@fortawesome/fontawesome-pro/css/all.css";
 
+$primary: #323149;
+
+$theme-colors: (
+  "primary": #323149
+);
+
+
+@import 'bootstrap/scss/bootstrap.scss';
+
 .nowordwrap {
   overflow: auto;
   display: inline;
@@ -12,8 +21,3 @@
   border-bottom: 1px solid #eeee;
 }
 
-$primary: #323149;
-
-$theme-colors: (
-  "primary": #323149
-);

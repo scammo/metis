@@ -14,7 +14,7 @@
               <img class="logo" src="https://static.codeanker.de/images/stockit-logo-white.png"/>
             </b-navbar-brand>
           </router-link>
-          <b-navbar-nav class="ml-auto">
+          <b-navbar-nav class="ml-auto" v-if="user">
             <div class="useravatar">
               <img :src="gravatar" >
             </div>
