@@ -23,10 +23,10 @@
                 {{user.firstname}} {{user.lastname}}
               </template>
               <b-dropdown-item :to="{ name: 'warehouselocation'}">
-                Settings
+                <i class="fad fa-cog"></i> Settings
               </b-dropdown-item>
               <b-dropdown-item href="#">
-                Sign Out
+                <i class="fad fa-sign-out"></i> Sign Out
               </b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>

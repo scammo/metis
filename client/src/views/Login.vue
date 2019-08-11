@@ -1,5 +1,5 @@
 <template>
-  <b-container class="login">
+  <b-container class="login mt-5">
     <b-form @submit="onSubmit">
       <h3>Login</h3>
       <b-form-input
@@ -17,6 +17,9 @@
         required
         placeholder="Enter password"
       />
+      <div class="alert alert-danger my-3" v-if="alert.message === 'Invalid login'" role="alert">
+        Benutzer oder Passwort falsch
+      </div>
       <b-button
         class="mt-2"
         variant="success"
@@ -35,6 +38,9 @@ export default {
       login: {
         email: '',
         password: ''
+      },
+      alert: {
+        message: null
       }
     }
   },
@@ -43,7 +49,7 @@ export default {
       evt.preventDefault()
       this.$store.dispatch('auth/authenticate', { strategy: 'local', ...this.login })
         .then(res => { this.$router.push({ name: 'home' }) })
-        .catch(() => { })
+        .catch((err) => { this.alert = err.data })
     }
   }
 }
