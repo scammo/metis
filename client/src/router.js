@@ -21,9 +21,9 @@ export default new Router({
       component: Login
     },
     {
-      path: '/details',
-      name: 'details',
-      component: () => import('./views/Details.vue'),
+      path: '/box/:boxId',
+      name: 'box',
+      component: () => import('./views/BoxDetails.vue'),
       meta: { requiresAuth: true }
     },
     {

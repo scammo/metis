@@ -1,7 +1,10 @@
 <template>
-  <b-container class="login mt-5">
+  <div class="login mt-5 mx-auto">
     <b-form @submit="onSubmit">
-      <h3>Login</h3>
+      <h3 class="text-center">
+        <i class="fal fa-user-circle" /> Anmelden
+      </h3>
+      <p>Melde dich hier mit deinem Synlogy-Konto an.</p>
       <b-form-input
         id="input-email"
         v-model="login.email"
@@ -17,18 +20,22 @@
         required
         placeholder="Enter password"
       />
-      <div class="alert alert-danger my-3" v-if="alert.message === 'Invalid login'" role="alert">
+      <div
+        v-if="alert.message === 'Invalid login'"
+        class="alert alert-danger my-3"
+        role="alert"
+      >
         Benutzer oder Passwort falsch
       </div>
       <b-button
-        class="mt-2"
+        class="mt-2 w-100"
         variant="success"
         type="submit"
       >
         Login
       </b-button>
     </b-form>
-  </b-container>
+  </div>
 </template>
 
 <script>
@@ -54,3 +61,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+
+  .login{
+    max-width:400px;
+  }
+
+</style>
