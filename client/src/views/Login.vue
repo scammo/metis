@@ -10,7 +10,7 @@
         v-model="login.email"
         type="email"
         required
-        placeholder="Enter email"
+        placeholder="Email"
       />
       <b-form-input
         id="input-password"
@@ -18,14 +18,14 @@
         class="mt-1"
         type="password"
         required
-        placeholder="Enter password"
+        placeholder="Passwort"
       />
       <div
         v-if="alert.message === 'Invalid login'"
         class="alert alert-danger my-3"
         role="alert"
       >
-        Benutzer oder Passwort falsch
+        <i class="fas fa-times" /> Benutzer oder Passwort falsch.
       </div>
       <b-button
         class="mt-2 w-100"

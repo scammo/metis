@@ -1,12 +1,6 @@
 @import "~@fortawesome/fontawesome-pro/css/all.css";
 
-$primary: #323149;
-
-$theme-colors: (
-  "primary": #323149
-);
-
-
+@import "bootstrap-overwrites/variables";
 @import 'bootstrap/scss/bootstrap.scss';
 
 .nowordwrap {
@@ -16,8 +10,3 @@ $theme-colors: (
 .pointer {
   cursor: pointer;
 }
-
-.navbar{
-  border-bottom: 1px solid #eeee;
-}
-
