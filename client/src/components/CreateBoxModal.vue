@@ -65,6 +65,7 @@ import feathers from '../api'
 const boxesService = feathers.service('box')
 
 export default {
+  name: 'CreateBoxModal',
   data: function () {
     return {
       boxinput: {

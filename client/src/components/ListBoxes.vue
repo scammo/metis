@@ -1,6 +1,25 @@
 <template>
   <div>
     <div
+      v-b-modal.CreateBoxModalRef
+      class="d-flex justify-content-end"
+    >
+      <span
+        class="pointer"
+      >
+        <i class="fas fa-plus-circle" /> Kiste anlegen
+      </span>
+    </div>
+    <div class="d-flex justify-content-center pb-4">
+      <div class="search w-100 mb-3">
+        <b-form-input
+          v-model="text"
+          class="text-center"
+          placeholder="Wonach suchst du?"
+        />
+      </div>
+    </div>
+    <div
       v-for="box in boxes"
       :key="box._id"
       class="row pb-2 pt-2 border-bottom"
@@ -47,11 +66,17 @@
         </div>
       </div>
     </div>
+    <create-box-modal />
   </div>
 </template>
 
 <script>
+import CreateBoxModal from '../components/CreateBoxModal'
+
 export default {
+  components: {
+    CreateBoxModal
+  },
   data: function () {
     return {
 
