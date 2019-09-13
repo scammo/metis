@@ -1,24 +1,25 @@
 <template>
   <div>
     <div class="container py-2">
-      <span>Bearbeiten
-        <i
-          v-b-modal.EditBoxModalRef
-          class="far fa-pen pointer"
-        />
-      </span>
-      <div class="row py-4">
-        <div class="col-2 float-left border">
+      <div class="row py-4 border-bottom">
+        <div class="col-2 float-left">
           <img
             src="https://www.auer-packaging.com/images/products/800/Eurobeh%C3%A4lter-mit-Scharnierdeckel-AUER--ed_64-32_01.jpg"
             class="img-fluid"
           >
         </div>
-        <div class="col-10 border py-2 pl-4 float-left">
+        <div
+          v-if="box"
+          class="col-10 py-2 pl-4 float-left"
+        >
           <div class="row">
             <div class="col-10">
               <h2>
                 {{ box.name }}
+                <small><i
+                  v-b-modal.EditBoxModalRef
+                  class="far fa-pen pointer"
+                /></small>
               </h2>
               <div class="grey">
                 Arbeitskreis
@@ -45,11 +46,10 @@
           </div>
         </div>
       </div>
-      <pre>{{ warehouse }}</pre>
       <div
         class="row"
       >
-        <div class="col-12 border">
+        <div class="col-12">
           <ListMaterials />
         </div>
       </div>

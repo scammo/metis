@@ -1,7 +1,7 @@
 <template>
   <table class="table table-borderless">
     <thead>
-      <tr>
+      <tr class="border-bottom">
         <th scope="col">
           Material
         </th>
