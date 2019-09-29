@@ -9,7 +9,8 @@
       <div class="container">
         <b-navbar-brand href="#">
           <img
-            src="https://static.codeanker.de/images/logo-white.svg"
+            class="logo"
+            src="https://static.codeanker.de/images/stockit-logo-white.png"
             alt="Codeanker Logo"
           >
         </b-navbar-brand>
@@ -100,6 +101,10 @@ export default {
   .user-avatar img{
     height: 32px;
     border-radius: 15px;
+  }
+
+  .logo{
+    height: 38px;
   }
 
 </style>

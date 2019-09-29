@@ -13,7 +13,7 @@
     <div class="d-flex justify-content-center pb-4">
       <div class="search w-100 mb-3">
         <b-form-input
-          v-model="text"
+          v-model="search"
           class="text-center"
           placeholder="Wonach suchst du?"
         />
@@ -79,7 +79,7 @@ export default {
   },
   data: function () {
     return {
-
+      search: null
     }
   },
   computed: {
