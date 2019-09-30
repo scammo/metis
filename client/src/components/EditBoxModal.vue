@@ -38,6 +38,30 @@
           <b-input />
         </div>
         <div class="pt-2">
+          Kisten Typ:
+        </div>
+        <div>
+          <b-form-select
+            id="inline-form-custom-select-pref"
+            v-model="box.boxtypeId"
+            class="mb-2 mr-sm-2 mb-sm-0"
+            :value="null"
+          >
+            <option :value="null">
+              Bitte wählen
+            </option>
+            <template v-for="boxtype in boxtypes">
+              <option
+                :key="boxtype._id"
+                :value="boxtype._id"
+                :name="boxtype.name"
+              >
+                {{ boxtype.artNumber }} - {{ boxtype.name }}
+              </option>
+            </template>
+          </b-form-select>
+        </div>
+        <div class="pt-2">
           Lagerort:
         </div>
         <div>
@@ -136,6 +160,9 @@ export default {
     },
     box () {
       return this.$store.getters['box/current']
+    },
+    boxtypes () {
+      return this.$store.getters['boxtypes/list']
     }
   },
   watch: {
@@ -148,6 +175,7 @@ export default {
     async fetch () {
       await this.$store.dispatch('warehouse/find')
       await this.$store.dispatch('workgroups/find')
+      await this.$store.dispatch('boxtypes/find')
       await this.$store.dispatch('box/get', this.$route.params.boxId)
     },
     save () {

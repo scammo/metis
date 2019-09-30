@@ -15,6 +15,7 @@ export default new Vuex.Store({
     service('warehouse'),
     service('workgroups'),
     service('user'),
+    service('boxtypes'),
     auth({ userService: 'user' })
   ],
   state: {

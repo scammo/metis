@@ -4,7 +4,8 @@
       <div class="row py-4 border-bottom">
         <div class="col-2 float-left">
           <img
-            src="https://www.auer-packaging.com/images/products/800/Eurobeh%C3%A4lter-mit-Scharnierdeckel-AUER--ed_64-32_01.jpg"
+            v-if="box && box.boxtype && box.boxtype.imageUrl"
+            :src="box.boxtype.imageUrl"
             class="img-fluid"
           >
         </div>
@@ -72,7 +73,7 @@ export default {
   },
   computed: {
     box () {
-      return this.$store.getters['box/list'][0]
+      return this.$store.getters['box/current']
     },
     warehouse () {
       return this.$store.getters['warehouse/list']
@@ -86,9 +87,7 @@ export default {
   },
   methods: {
     async fetch () {
-      await this.$store.dispatch('box/find', { _id: this.$route.params.boxId }).then((res) => {
-        this.$store.dispatch('warehouse/find', { _id: res.data[0].warehouseid })
-      })
+      await this.$store.dispatch('box/get', this.$route.params.boxId)
     }
   }
 }

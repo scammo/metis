@@ -7,6 +7,9 @@ const boxResolvers = {
     },
     workgroups: () => async (box, ctx) => {
       box.workgroup = box.workgroupId ? await ctx.app.service('workgroups').get(box.workgroupId): null;
+    },
+    boxtypes: () => async (box, ctx) => {
+      box.boxtype = box.boxtypeId ? await ctx.app.service('boxtypes').get(box.boxtypeId): null;
     }
   }
 };

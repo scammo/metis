@@ -29,7 +29,8 @@
         class="col-2 float-left"
       >
         <img
-          src="https://www.auer-packaging.com/images/products/800/Eurobeh%C3%A4lter-mit-Scharnierdeckel-AUER--ed_64-32_01.jpg"
+          v-if="box.boxtype && box.boxtype.imageUrl"
+          :src="box.boxtype.imageUrl"
           class="img-fluid"
         >
       </router-link>
@@ -52,9 +53,9 @@
                 Lagerstandort:
               </div>
               <div class="col-7">
-                {{ box.kind }} <br>
+                {{ box.boxtype.artNumber }} <br>
                 schwer <br>
-                {{ box.warehouseid }}
+                {{ box.warehouse.name }}
               </div>
             </div>
           </div>
@@ -65,6 +66,9 @@
           </div>
         </div>
       </div>
+      <pre>
+        {{ boxes }}
+      </pre>
     </div>
     <create-box-modal />
   </div>
