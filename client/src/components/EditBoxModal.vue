@@ -6,7 +6,7 @@
       title="Kiste Hinzufügen"
       hide-footer
     >
-      <div>
+      <div v-if="box">
         <div class="pt-2">
           Titel:
         </div>
@@ -43,7 +43,7 @@
         <div>
           <b-form-select
             id="inline-form-custom-select-pref"
-            v-model="box.warehouseid"
+            v-model="box.warehouseId"
             class="mb-2 mr-sm-2 mb-sm-0"
             :value="null"
           >
@@ -57,6 +57,30 @@
                 :name="warehouse.name"
               >
                 {{ warehouse.name }}
+              </option>
+            </template>
+          </b-form-select>
+        </div>
+        <div class="pt-2">
+          Arbeitsfeld:
+        </div>
+        <div>
+          <b-form-select
+            id="inline-form-custom-select-pref"
+            v-model="box.workgroupId"
+            class="mb-2 mr-sm-2 mb-sm-0"
+            :value="null"
+          >
+            <option :value="null">
+              Bitte wählen
+            </option>
+            <template v-for="workgroup in workgroups">
+              <option
+                :key="workgroup._id"
+                :value="workgroup._id"
+                :name="workgroup.name"
+              >
+                {{ workgroup.name }}
               </option>
             </template>
           </b-form-select>
@@ -77,7 +101,6 @@
             Speichern
           </b-button>
         </div>
-        <pre>{{ warehouses }}</pre>
         <pre>{{ box }}</pre>
       </div>
     </b-modal>
@@ -88,7 +111,6 @@
 export default {
   data () {
     return {
-      box: {},
       selectedGewicht: null,
       optionsGewicht: [
         { value: null, text: 'Please select an option' },
@@ -108,6 +130,12 @@ export default {
   computed: {
     warehouses () {
       return this.$store.getters['warehouse/list']
+    },
+    workgroups () {
+      return this.$store.getters['workgroups/list']
+    },
+    box () {
+      return this.$store.getters['box/current']
     }
   },
   watch: {
@@ -119,12 +147,12 @@ export default {
   methods: {
     async fetch () {
       await this.$store.dispatch('warehouse/find')
-      await this.$store.dispatch('box/find', { _id: this.$route.params.boxId }).then((res) => {
-        this.box = this.$store.getters['box/list'][0]
-      })
+      await this.$store.dispatch('workgroups/find')
+      await this.$store.dispatch('box/get', this.$route.params.boxId)
     },
     save () {
       this.$store.dispatch('box/patch', [this.$route.params.boxId, this.box]).then((res) => {
+
       })
     }
   }

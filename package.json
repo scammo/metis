@@ -18,5 +18,8 @@
     "concurrently": "^4.1.0",
     "jsdoc-to-markdown": "^4.0.1",
     "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "feathers-hooks-common": "^4.20.7"
   }
 }

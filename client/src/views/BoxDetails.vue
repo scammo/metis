@@ -21,9 +21,6 @@
                   class="far fa-pen pointer"
                 /></small>
               </h2>
-              <div class="grey">
-                Arbeitskreis
-              </div>
               <div class="row grey">
                 <div class="col-5 font-weight-bold">
                   Art <br>
@@ -33,7 +30,7 @@
                 <div class="col-7">
                   {{ box.kind }} <br>
                   {{ box.weight }} <br>
-                  {{ box.warehouseid }}
+                  {{ box.warehouse.name }}
                 </div>
               </div>
             </div>

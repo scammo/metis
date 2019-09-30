@@ -26,8 +26,8 @@
     </thead>
     <tbody>
       <tr
-        v-for="workgroups in workgroup"
-        :key="workgroups._id"
+        v-for="(workgroups, index) in workgroup"
+        :key="index"
       >
         <td>
           {{ workgroups.name }}
@@ -36,6 +36,10 @@
           {{ workgroups.abbreviation }}
         </td>
         <td>
+          <i
+            class="far fa-trash float-right pointer text-danger ml-2"
+            @click="remove(index)"
+          />
           <i
             v-b-modal.EditWorkgroupsModalRef
             class="far fa-edit float-right pointer"
@@ -67,6 +71,10 @@ export default {
   methods: {
     async fetch () {
       await this.$store.dispatch('workgroups/find')
+    },
+    remove (index) {
+      console.log(this.workgroup.splice(index, 1))
+      this.workgroup.splice(index, 1)
     }
   }
 }

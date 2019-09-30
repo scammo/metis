@@ -9,7 +9,8 @@ module.exports = function (app) {
     name: { type: String, required: true },
     kind: { type: String, required: true },
     itemnumber: { type: Number, required: true },
-    warehouseid: { type: String, required: true }, /*type: Schema.Types.ObjectId, required: true*/
+    warehouseId: { type: String, required: true },
+    workgroupId: { type: String, required: false },
     weight: { type: String, required: false },
     typeId: { type: String, required: false }
   }, {

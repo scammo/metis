@@ -1,4 +1,15 @@
+const { fastJoin } = require('feathers-hooks-common');
 
+const boxResolvers = {
+  joins: {
+    warehouse: () => async (box, ctx) => {
+      box.warehouse = box.warehouseId ? await ctx.app.service('warehouse').get(box.warehouseId) : null;
+    },
+    workgroups: () => async (box, ctx) => {
+      box.workgroup = box.workgroupId ? await ctx.app.service('workgroups').get(box.workgroupId): null;
+    }
+  }
+};
 
 module.exports = {
   before: {
@@ -12,7 +23,7 @@ module.exports = {
   },
 
   after: {
-    all: [],
+    all: [fastJoin(boxResolvers)],
     find: [],
     get: [],
     create: [],
