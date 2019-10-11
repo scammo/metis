@@ -18,7 +18,8 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: Login,
+      meta: { layout: 'login' }
     },
     {
       path: '/box/:boxId',
@@ -36,6 +37,12 @@ export default new Router({
       path: '/settings/warehouselocation',
       name: 'warehouselocation',
       component: () => import('./views/WarehouseLocation.vue'),
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/settings/users',
+      name: 'users',
+      component: () => import('./views/Users.vue'),
       meta: { requiresAuth: true }
     },
     {

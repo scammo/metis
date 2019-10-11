@@ -76,6 +76,9 @@
             <b-nav-item :to="{ name: 'workgroups' }">
               <i class="fad fa-users-class " /> Arbeitsgruppen
             </b-nav-item>
+            <b-nav-item :to="{ name: 'users' }">
+              <i class="fad fa-users " /> Benutzer
+            </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </div>
