@@ -6,7 +6,7 @@
       title="Lagerort Bearbeiten"
       hide-footer
     >
-      <div>
+      <div v-if="warehouse">
         <div class="pt-2">
           Ort:
         </div>
@@ -30,7 +30,7 @@
             variant="primary"
             size="sm"
             class="float-right"
-            @click="create()"
+            @click="save()"
           >
             Speichern
           </b-button>
@@ -43,14 +43,9 @@
 <script>
 
 export default {
-  data () {
-    return {
-      warehouse: {}
-    }
-  },
   computed: {
-    warehouswe () {
-      return this.$store.getters['warehouse/get']()
+    warehouse () {
+      return this.$store.getters['warehouse/current']
     }
   },
   methods: {

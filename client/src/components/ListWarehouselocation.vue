@@ -32,8 +32,8 @@
         <td>{{ warehouse.particularities }}</td>
         <td>
           <i
-            v-b-modal.EditWarehouselocationModalRef
             class="far fa-edit float-right pointer"
+            @click="openModal(warehouse._id)"
           />
         </td>
       </tr>
@@ -62,6 +62,10 @@ export default {
   methods: {
     async fetch () {
       await this.$store.dispatch('warehouse/find')
+    },
+    openModal (id) {
+      this.$store.dispatch('warehouse/get', id)
+      this.$bvModal.show('EditWarehouselocationModalRef')
     }
   }
 }

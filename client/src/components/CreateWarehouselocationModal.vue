@@ -56,7 +56,7 @@ export default {
       this.warehouses = await warehousesService.find()
     },
     async create () {
-      await warehousesService.create(this.warehouseinput)
+      await warehousesService.create(this.warehouse)
       await this.$bvModal.hide('CreateWarehouselocationModalRef')
     }
   }
