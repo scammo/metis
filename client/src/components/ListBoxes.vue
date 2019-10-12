@@ -53,8 +53,9 @@
                 Lagerstandort:
               </div>
               <div class="col-7">
-                artNumber<br>
-                schwer <br>
+                {{ box.boxtype.artNumber }}<br>
+                {{ box.weight }}<br>
+                {{ box.warehouse.name }}
               </div>
             </div>
           </div>
@@ -65,9 +66,6 @@
           </div>
         </div>
       </div>
-      <pre>
-        {{ boxes }}
-      </pre>
     </div>
     <create-box-modal />
   </div>

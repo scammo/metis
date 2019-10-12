@@ -33,6 +33,7 @@ export default {
     async create () {
       await boxesService.create(this.box)
       await this.$bvModal.hide('CreateBoxModalRef')
+      this.box = {}
     }
   }
 }
