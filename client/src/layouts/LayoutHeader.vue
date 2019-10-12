@@ -68,17 +68,32 @@
           <!-- Right aligned nav items -->
           <b-navbar-nav>
             <b-nav-item :to="{ name: 'home' }">
-              <i class="fad fa-home" /> Dashboard
+              <i class="fad fa-search" /> Dashboard
             </b-nav-item>
-            <b-nav-item :to="{ name: 'warehouselocation' }">
-              <i class="fad fa-warehouse" /> Lager
+            <b-nav-item :to="{ name: 'boxes'}">
+              <i class="fad fa-box" /> Kisten
             </b-nav-item>
-            <b-nav-item :to="{ name: 'workgroups' }">
-              <i class="fad fa-users-class " /> Arbeitsgruppen
+            <b-nav-item :to="{ name: 'materials'}">
+              <i class="fad fa-baseball" /> Materialien
             </b-nav-item>
-            <b-nav-item :to="{ name: 'users' }">
-              <i class="fad fa-users " /> Benutzer
-            </b-nav-item>
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template v-slot:button-content>
+                <i class="fad fa-cogs " /> Einstellungen
+              </template>
+              <b-dropdown-item :to="{ name: 'warehouselocation' }">
+                <i class="fad fa-warehouse" /> Lager
+              </b-dropdown-item>
+              <b-dropdown-item :to="{ name: 'users' }">
+                <i class="fad fa-boxes " /> Kistentypen
+              </b-dropdown-item>
+              <b-dropdown-item :to="{ name: 'workgroups' }">
+                <i class="fad fa-users-class " /> Arbeitsfelder
+              </b-dropdown-item>
+              <b-dropdown-item :to="{ name: 'users' }">
+                <i class="fad fa-users " /> Benutzer
+              </b-dropdown-item>
+            </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
       </div>

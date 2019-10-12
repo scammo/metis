@@ -17,10 +17,12 @@
           scope="col"
           width="10%"
         >
-          <i
+          <span
             v-b-modal.CreateWorkgroupsModalRef
-            class="fal fa-plus float-right pointer"
-          />
+            class="pointer"
+          ><i
+            class="fad fa-plus-circle"
+          /> anlegen</span>
         </th>
       </tr>
     </thead>

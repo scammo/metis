@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <h5>Benutzer</h5>
+    <h4 class="mb-3">
+      <i class="fad fa-users" />  Benutzer
+    </h4>
     <table class="table">
       <thead>
         <tr>

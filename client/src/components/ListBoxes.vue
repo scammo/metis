@@ -7,7 +7,7 @@
       <span
         class="pointer"
       >
-        <i class="fas fa-plus-circle" /> Kiste anlegen
+        <i class="fad fa-plus-circle" /> Kiste anlegen
       </span>
     </div>
     <div class="d-flex justify-content-center pb-4">
@@ -19,7 +19,6 @@
         />
       </div>
     </div>
-    <pre>{{ boxes }}</pre>
     <div
       v-for="box in boxes"
       :key="box._id"

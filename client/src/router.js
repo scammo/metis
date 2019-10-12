@@ -30,19 +30,25 @@ export default new Router({
     {
       path: '/settings/workgroups',
       name: 'workgroups',
-      component: () => import('./views/WorkGroups.vue'),
+      component: () => import('./views/SettingsWorkGroups.vue'),
       meta: { requiresAuth: true }
     },
     {
       path: '/settings/warehouselocation',
       name: 'warehouselocation',
-      component: () => import('./views/WarehouseLocation.vue'),
+      component: () => import('./views/SettingsWarehouseLocation.vue'),
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/settings/boxtypes',
+      name: 'users',
+      component: () => import('./views/SettingsBoxtypes.vue'),
       meta: { requiresAuth: true }
     },
     {
       path: '/settings/users',
       name: 'users',
-      component: () => import('./views/Users.vue'),
+      component: () => import('./views/SettingsUsers.vue'),
       meta: { requiresAuth: true }
     },
     {
