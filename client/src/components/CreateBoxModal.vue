@@ -15,17 +15,13 @@
             <b-input
               v-model="boxinput.name"
               type="text"
+              :required="true"
             />
           </div>
-          <div class="pt-2">
-            Art:
-          </div>
-          <div>
-            <b-form-select
-              v-model="boxinput.kind"
-              :options="optionskind"
-            />
-          </div>
+          <selectWorkgroup :box="boxinput" />
+          <selectWarehouse :box="boxinput" />
+          <selectBoxtype :box="boxinput" />
+          <selectWeight :box="boxinput" />
           <div class="pt-2">
             Artikelnummer:
           </div>
@@ -35,15 +31,7 @@
               type="number"
             />
           </div>
-          <div class="pt-2">
-            Lagerstandort:
-          </div>
-          <div>
-            <b-form-select
-              v-model="boxinput.warehouseid"
-              :options="optionswarehouseid"
-            />
-          </div>
+          <pre>{{ boxinput }}</pre>
           <div class="py-3">
             <b-button
               variant="primary"
@@ -62,35 +50,29 @@
 
 <script>
 import feathers from '../api'
+import selectWorkgroup from './DynamicFields/selectWorkgroup'
+import selectWarehouse from './DynamicFields/selectWarehouse'
+import selectBoxtype from './DynamicFields/selectBoxtype'
+import selectWeight from './DynamicFields/selectWeight'
 const boxesService = feathers.service('box')
 
 export default {
   name: 'CreateBoxModal',
+  components: {
+    selectWorkgroup,
+    selectWarehouse,
+    selectBoxtype,
+    selectWeight
+  },
   data: function () {
     return {
       boxinput: {
-        kind: null,
         warehouseid: null
       },
-      optionskind: [
-        { value: 'a', text: 'Typ 1' },
-        { value: 'b', text: 'Typ 2' },
-        { value: 'c', text: 'Typ 3' },
-        { value: 'd', text: 'Typ 4' }
-      ],
-      optionswarehouseid: [
-        { value: 'a', text: 'Ort 1' },
-        { value: 'b', text: 'Ort 2' },
-        { value: 'c', text: 'Ort 3' },
-        { value: 'd', text: 'Ort 4' }
-      ],
       boxes: {}
     }
   },
   methods: {
-    async fetch () {
-      this.boxes = await boxesService.find()
-    },
     async create () {
       await boxesService.create(this.boxinput)
       await this.$bvModal.hide('CreateBoxModalRef')

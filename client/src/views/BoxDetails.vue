@@ -29,7 +29,6 @@
                   Lagerstandort
                 </div>
                 <div class="col-7">
-                  {{ box.kind }} <br>
                   {{ box.weight }} <br>
                   {{ box.warehouse.name }}
                 </div>

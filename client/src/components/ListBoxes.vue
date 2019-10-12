@@ -19,6 +19,7 @@
         />
       </div>
     </div>
+    <pre>{{ boxes }}</pre>
     <div
       v-for="box in boxes"
       :key="box._id"
@@ -53,9 +54,8 @@
                 Lagerstandort:
               </div>
               <div class="col-7">
-                {{ box.boxtype.artNumber }} <br>
+                artNumber<br>
                 schwer <br>
-                {{ box.warehouse.name }}
               </div>
             </div>
           </div>
