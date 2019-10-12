@@ -6,75 +6,32 @@
       title="Kiste Hinzufügen"
       hide-footer
     >
-      <div>
-        <div>
-          <div>
-            Titel:
-          </div>
-          <div>
-            <b-input
-              v-model="boxinput.name"
-              type="text"
-              :required="true"
-            />
-          </div>
-          <selectWorkgroup :box="boxinput" />
-          <selectWarehouse :box="boxinput" />
-          <selectBoxtype :box="boxinput" />
-          <selectWeight :box="boxinput" />
-          <div class="pt-2">
-            Artikelnummer:
-          </div>
-          <div>
-            <b-input
-              v-model="boxinput.itemnumber"
-              type="number"
-            />
-          </div>
-          <pre>{{ boxinput }}</pre>
-          <div class="py-3">
-            <b-button
-              variant="primary"
-              size="sm"
-              class="float-right"
-              @click="create()"
-            >
-              Speichern
-            </b-button>
-          </div>
-        </div>
-      </div>
+      <box-form
+        :box="box"
+        @save="create"
+      />
     </b-modal>
   </div>
 </template>
 
 <script>
 import feathers from '../api'
-import selectWorkgroup from './DynamicFields/selectWorkgroup'
-import selectWarehouse from './DynamicFields/selectWarehouse'
-import selectBoxtype from './DynamicFields/selectBoxtype'
-import selectWeight from './DynamicFields/selectWeight'
+import boxForm from './DynamicFields/BoxForm'
 const boxesService = feathers.service('box')
 
 export default {
   name: 'CreateBoxModal',
   components: {
-    selectWorkgroup,
-    selectWarehouse,
-    selectBoxtype,
-    selectWeight
+    boxForm
   },
   data: function () {
     return {
-      boxinput: {
-        warehouseid: null
-      },
-      boxes: {}
+      box: {}
     }
   },
   methods: {
     async create () {
-      await boxesService.create(this.boxinput)
+      await boxesService.create(this.box)
       await this.$bvModal.hide('CreateBoxModalRef')
     }
   }
