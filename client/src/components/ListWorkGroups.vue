@@ -28,23 +28,23 @@
     </thead>
     <tbody>
       <tr
-        v-for="(workgroups, index) in workgroup"
+        v-for="(workgroup, index) in workgroups"
         :key="index"
       >
         <td>
-          {{ workgroups.name }}
+          {{ workgroup.name }}
         </td>
         <td>
-          {{ workgroups.abbreviation }}
+          {{ workgroup.abbreviation }}
         </td>
         <td>
           <i
-            class="far fa-trash float-right pointer text-danger ml-2"
-            @click="remove(index)"
+            class="d-none far fa-trash float-right pointer text-danger ml-2"
+            @click="remove(workgroup._id)"
           />
           <i
-            v-b-modal.EditWorkgroupsModalRef
             class="far fa-edit float-right pointer"
+            @click="openModal(workgroup._id)"
           />
         </td>
       </tr>
@@ -60,7 +60,7 @@ export default {
     }
   },
   computed: {
-    workgroup () {
+    workgroups () {
       return this.$store.getters['workgroups/list']
     }
   },
@@ -74,9 +74,15 @@ export default {
     async fetch () {
       await this.$store.dispatch('workgroups/find')
     },
-    remove (index) {
-      console.log(this.workgroup.splice(index, 1))
-      this.workgroup.splice(index, 1)
+    remove (id) {
+      // löschen ist derzeit noch ein Prolem wegen der refernzen zu den boxen
+      /* if (confirm('sicher?')) {
+        this.$store.dispatch('workgroups/remove', id)
+      } */
+    },
+    openModal (id) {
+      this.$store.dispatch('workgroups/get', id)
+      this.$bvModal.show('EditWorkgroupsModalRef')
     }
   }
 }
