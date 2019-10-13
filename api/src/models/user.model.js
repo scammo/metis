@@ -11,7 +11,7 @@ module.exports = function (app) {
     lastname: { type: String },
     email: { type: String, unique: true, lowercase: true },
     password: { type: String },
-    workgroupId: { type: Schema.Types.ObjectId, required: true },
+    workgroupId: { type: Schema.Types.ObjectId, required: false },
     hideAlert: { type: Boolean, required: false }
   }, {
     timestamps: true
