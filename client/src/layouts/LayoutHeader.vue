@@ -7,7 +7,7 @@
       variant="primary"
     >
       <div class="container">
-        <b-navbar-brand href="#">
+        <b-navbar-brand :to="{ name: 'home' }">
           <img
             class="logo"
             src="https://static.codeanker.de/images/stockit-logo-white.png"
@@ -70,10 +70,16 @@
             <b-nav-item :to="{ name: 'home' }">
               <i class="fad fa-search" /> Dashboard
             </b-nav-item>
-            <b-nav-item :to="{ name: 'boxes'}">
+            <b-nav-item
+              class="d-none"
+              :to="{ name: 'boxes'}"
+            >
               <i class="fad fa-box" /> Kisten
             </b-nav-item>
-            <b-nav-item :to="{ name: 'materials'}">
+            <b-nav-item
+              class="d-none"
+              :to="{ name: 'materials'}"
+            >
               <i class="fad fa-baseball" /> Materialien
             </b-nav-item>
             <b-nav-item-dropdown right>

@@ -11,7 +11,7 @@
       </span>
     </div>
     <div class="d-flex justify-content-center pb-4">
-      <div class="search w-100 mb-3">
+      <div class="search w-100 mb-3 d-none">
         <b-form-input
           v-model="search"
           class="text-center"
