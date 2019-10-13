@@ -8,7 +8,7 @@ module.exports = {
     },
     proxy: {
       '/api': {
-        target: 'http://api:3030',
+        target: process.env.VUE_APP_API_URL,
         pathRewrite: { '^/api': '' }
       }
     }
