@@ -84,7 +84,7 @@
               <b-dropdown-item :to="{ name: 'warehouselocation' }">
                 <i class="fad fa-warehouse" /> Lager
               </b-dropdown-item>
-              <b-dropdown-item :to="{ name: 'users' }">
+              <b-dropdown-item :to="{ name: 'boxtypes' }">
                 <i class="fad fa-boxes " /> Kistentypen
               </b-dropdown-item>
               <b-dropdown-item :to="{ name: 'workgroups' }">

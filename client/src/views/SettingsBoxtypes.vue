@@ -21,19 +21,19 @@
       </div>
     </div>
     <create-boxtype-modal />
-    <edit-workgroups-modal />
+    <edit-boxtype-modal />
   </div>
 </template>
 <script>
 
 import CreateBoxtypeModal from '../components/CreateBoxtypeModal'
-import EditWorkgroupsModal from '../components/EditWorkgroupsModal'
+import EditBoxtypeModal from '../components/EditBoxtypeModal'
 import ListBoxtypes from '../components/ListBoxtypes'
 
 export default {
   components: {
     CreateBoxtypeModal,
-    EditWorkgroupsModal,
+    EditBoxtypeModal,
     ListBoxtypes
   }
 }

@@ -1,47 +1,47 @@
 <template>
   <div>
     <b-modal
-      id="CreateBoxtypeModalRef"
-      ref="CreateBoxtypeModalRef"
-      title="Lagerort Hinzufügen"
+      id="EditBoxtypeModalRef"
+      ref="EditBoxtypeModalRef"
+      title="Kistentyp bearbeiten"
       hide-footer
     >
-      <div>
+      <div v-if="boxtype">
         <div class="pt-2">
           Name:
         </div>
         <div>
-          <b-input v-model="boxtypeInput.name" />
+          <b-input v-model="boxtype.name" />
         </div>
         <div class="pt-2">
           Außenmaße L x B x H:
         </div>
         <div>
-          <b-input v-model="boxtypeInput.sizes" />
+          <b-input v-model="boxtype.sizes" />
         </div>
         <div class="pt-2">
           Handgriffe:
         </div>
         <div>
-          <b-input v-model="boxtypeInput.handgrips" />
+          <b-input v-model="boxtype.handgrips" />
         </div>
         <div class="pt-2">
           Artikelnummer:
         </div>
         <div>
-          <b-input v-model="boxtypeInput.artNumber" />
+          <b-input v-model="boxtype.artNumber" />
         </div>
         <div class="pt-2">
           Bild Url:
         </div>
         <div>
-          <b-input v-model="boxtypeInput.imageUrl" />
+          <b-input v-model="boxtype.imageUrl" />
         </div>
         <div class="pt-2">
           Link zum Hersteller:
         </div>
         <div>
-          <b-input v-model="boxtypeInput.producerLink" />
+          <b-input v-model="boxtype.producerLink" />
         </div>
         <div class="py-3">
           <b-button
@@ -59,23 +59,18 @@
 </template>
 
 <script>
-import feathers from '../api'
-const boxtypeService = feathers.service('boxtypes')
 
 export default {
-  data: function () {
-    return {
-      boxtype: {},
-      boxtypeInput: {}
+  computed: {
+    boxtype () {
+      return this.$store.getters['boxtypes/current']
     }
   },
   methods: {
-    async fetch () {
-      this.warehouses = await boxtypeService.find()
-    },
-    async create () {
-      await boxtypeService.create(this.boxtypeInput)
-      await this.$bvModal.hide('CreateBoxtypeModalRef')
+    save () {
+      this.$store.dispatch('boxtypes/patch', [this.boxtype._id, this.boxtype]).then((res) => {
+        this.$bvModal.hide('EditBoxtypeModalRef')
+      })
     }
   }
 }

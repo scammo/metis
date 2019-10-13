@@ -53,8 +53,8 @@
         </td>
         <td>
           <i
-            v-b-modal.EditBoxtypeModalRef
             class="far fa-edit float-right pointer"
+            @click="openModal(boxtype._id)"
           />
         </td>
       </tr>
@@ -83,6 +83,10 @@ export default {
   methods: {
     async fetch () {
       await this.$store.dispatch('boxtypes/find')
+    },
+    openModal (id) {
+      this.$store.dispatch('boxtypes/get', id)
+      this.$bvModal.show('EditBoxtypeModalRef')
     }
   }
 }

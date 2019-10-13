@@ -41,7 +41,7 @@ export default new Router({
     },
     {
       path: '/settings/boxtypes',
-      name: 'users',
+      name: 'boxtypes',
       component: () => import('./views/SettingsBoxtypes.vue'),
       meta: { requiresAuth: true }
     },

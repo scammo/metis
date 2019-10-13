@@ -1,8 +1,18 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
+const { fastJoin } = require('feathers-hooks-common');
 
 const {
   hashPassword, protect
 } = require('@feathersjs/authentication-local').hooks;
+
+
+const userResolvers = {
+  joins: {
+    workgroup: () => async (user, ctx) => {
+      user.workgroup = user.workgroupId ? await ctx.app.service('workgroups').get(user.workgroupId) : null;
+    }
+  }
+};
 
 module.exports = {
   before: {
@@ -16,9 +26,10 @@ module.exports = {
   },
 
   after: {
-    all: [ 
+    all: [
       // Make sure the password field is never sent to the client
       // Always must be the last hook
+      fastJoin(userResolvers),
       protect('password')
     ],
     find: [],
