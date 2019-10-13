@@ -19,7 +19,7 @@
                 {{ box.name }}
                 <small><i
                   v-b-modal.EditBoxModalRef
-                  class="far fa-pen pointer"
+                  class="fad fa-pen pointer"
                 /></small>
               </h2>
               <div class="row grey">
