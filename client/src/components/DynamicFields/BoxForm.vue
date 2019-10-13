@@ -28,7 +28,7 @@
         variant="primary"
         size="sm"
         class="float-right"
-        @click="save()"
+        @click="submit()"
       >
         Speichern
       </b-button>
@@ -57,8 +57,8 @@ export default {
     }
   },
   methods: {
-    save () {
-      this.$emit('save', this.box)
+    submit () {
+      this.$emit('submit', this.box)
     }
   }
 }

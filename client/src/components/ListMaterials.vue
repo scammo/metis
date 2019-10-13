@@ -48,8 +48,12 @@
         <td>{{ material.oderlink }}</td>
         <td>
           <i
-            v-b-modal.EditMaterialModalRef
-            class="far fa-edit float-right pointer"
+            class="fad fa-edit float-right pointer"
+            @click="openModal(material._id)"
+          />
+          <i
+            class="fad fa-trash float-right pointer mr-2"
+            @click="remove(material._id)"
           />
         </td>
       </tr>
@@ -66,7 +70,9 @@ export default {
   },
   computed: {
     materials () {
-      return this.$store.getters['material/list']
+      return this.$store.getters['material/find']({ query: {
+        boxId: this.$route.params.boxId
+      } }).data
     }
   },
   watch: {
@@ -77,7 +83,18 @@ export default {
   },
   methods: {
     async fetch () {
-      await this.$store.dispatch('material/find')
+      await this.$store.dispatch('material/find', {
+        query: {
+          boxId: this.$route.params.boxId
+        }
+      })
+    },
+    openModal (id) {
+      this.$store.dispatch('material/get', id)
+      this.$bvModal.show('EditMaterialModalRef')
+    },
+    remove (id) {
+      this.$store.dispatch('material/remove', id)
     }
   }
 }

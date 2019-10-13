@@ -8,7 +8,7 @@
     >
       <box-form
         :box="box"
-        @save="save"
+        @submit="save"
       />
     </b-modal>
   </div>
