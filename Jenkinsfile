@@ -89,7 +89,7 @@ node("master") {
   def tags = [
     commitHash
   ]
-  def label = "praecura-api-${UUID.randomUUID().toString()}"
+  def label = "metis-api-${UUID.randomUUID().toString()}"
   stepsForParallel[label] = buildDocker(label, "./api/Dockerfile", "docker.io/dlrgjugend/metis-api", tags, buildArgs, "`pwd`/api")
 
   parallel stepsForParallel
