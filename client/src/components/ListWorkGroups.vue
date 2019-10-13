@@ -13,17 +13,7 @@
         >
           vollständiger Name
         </th>
-        <th
-          scope="col"
-          width="10%"
-        >
-          <span
-            v-b-modal.CreateWorkgroupsModalRef
-            class="pointer"
-          ><i
-            class="fad fa-plus-circle"
-          /> anlegen</span>
-        </th>
+        <th width="10px" />
       </tr>
     </thead>
     <tbody>

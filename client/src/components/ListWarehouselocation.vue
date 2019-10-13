@@ -11,15 +11,7 @@
         <th scope="col">
           Einschränkungen
         </th>
-        <th
-          scope="col"
-          width="10%"
-        >
-          <i
-            v-b-modal.CreateWarehouselocationModalRef
-            class="fal fa-plus float-right pointer"
-          />
-        </th>
+        <th width="10px" />
       </tr>
     </thead>
     <tbody>

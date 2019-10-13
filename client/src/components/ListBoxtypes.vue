@@ -19,14 +19,8 @@
           Artikelnummer
         </th>
         <th
-          scope="col"
-          width="10%"
-        >
-          <i
-            v-b-modal.CreateBoxtypeModalRef
-            class="fal fa-plus float-right pointer"
-          />
-        </th>
+          width="10px"
+        />
       </tr>
     </thead>
     <tbody>

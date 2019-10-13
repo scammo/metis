@@ -1,9 +1,20 @@
 <template>
   <div>
     <div class="container">
-      <h4 class="mb-3">
-        <i class="fad fa-users-class " />  Arbeitsfelder
-      </h4>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4>
+          <i class="fad fa-users-class " />  Arbeitsfelder
+        </h4>
+        <div
+          v-b-modal.CreateWorkgroupsModalRef
+          class="pointer"
+        >
+          <i
+            class="fad fa-plus-circle"
+          /> Arbeitsfeld anlegen
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-12">
           <ListWorkGroups />
