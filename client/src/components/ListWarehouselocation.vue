@@ -9,7 +9,7 @@
           Adresse
         </th>
         <th scope="col">
-          Einschränkungen
+          Besonderheiten
         </th>
         <th width="10px" />
       </tr>
