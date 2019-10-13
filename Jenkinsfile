@@ -69,6 +69,7 @@ node("master") {
     scmVars = checkout scm
   }
   def stepsForParallel = [:]
+  def pkg = readJSON file: 'package.json'
   def commitHash = scmVars.GIT_COMMIT.take(7);
   def version = pkg.version;
 
