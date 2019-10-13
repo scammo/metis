@@ -1,5 +1,5 @@
 {
-  "host": "https://metis.dlrg.sh",
+  "host": "metis.dlrg.sh",
   "mongodb": "MONGO",
   "port": "80"
 }
