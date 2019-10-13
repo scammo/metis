@@ -15,3 +15,16 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  html {
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+  }
+
+  html, body, #app{
+    height: 100%;
+    margin: 0;
+  }
+
+</style>

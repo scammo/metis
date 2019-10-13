@@ -38,6 +38,13 @@ requireBasicComponents.keys().forEach(fileName => {
   )
 })
 
+if (process && process.env) {
+  const commitHash = process.env.VUE_APP_COMMIT_HASH || 'none'
+  const version = process.env.VUE_APP_VERSION || 'x.x.x'
+  store.commit('setCommitHash', commitHash)
+  store.commit('setVersion', version)
+}
+
 router.beforeEach((to, from, next) => {
   const currentUser = store.state.auth.user
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth)

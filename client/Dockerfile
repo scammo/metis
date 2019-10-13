@@ -7,6 +7,8 @@ RUN npm ci
 COPY . .
 ARG commitHash
 ENV VUE_APP_COMMIT_HASH $commitHash
+ARG version
+ENV VUE_APP_VERSION $version
 RUN npm run build
 
 # production stage

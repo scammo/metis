@@ -19,10 +19,16 @@ export default new Vuex.Store({
     auth({ userService: 'user' })
   ],
   state: {
-
+    commitHash: null,
+    version: null
   },
   mutations: {
-
+    setCommitHash (state, payload) {
+      state.commitHash = payload
+    },
+    setVersion (state, payload) {
+      state.version = payload
+    }
   },
   actions: {
 
