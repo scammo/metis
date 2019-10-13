@@ -98,6 +98,26 @@
         </b-collapse>
       </div>
     </b-navbar>
+    <div
+      v-if="!user.hideAlert"
+      class="container py-3"
+    >
+      <b-alert
+        show
+        variant="warning"
+        dismissible
+        @dismissed="dismissAlert"
+      >
+        <p class="mb-0">
+          <i class="fad fa-exclamation-triangle" /> <span class="font-weight-bold"> Entwicklungsphase</span>
+          <br> Dieses System befindet sich noch in der Entwicklung. Wünsche und Fehler können auf <i class="fab fa-github" /> Github eingetragen werden
+          <a
+            href="https://github.com/dlrg/metis/issues"
+            target="_blank"
+          > <i class="fad fa-external-link" /> Issues anlegen</a>
+        </p>
+      </b-alert>
+    </div>
   </div>
 </template>
 
@@ -108,6 +128,12 @@ export default {
   computed: {
     user () {
       return this.$store.getters['user/current']
+    }
+  },
+  methods: {
+    dismissAlert () {
+      console.log('dismiss')
+      this.$store.dispatch('user/patch', [this.user._id, { ...this.user, hideAlert: true }])
     }
   }
 }

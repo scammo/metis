@@ -10,8 +10,8 @@ module.exports = function (app) {
     lastname: { type: String },
     email: { type: String, unique: true, lowercase: true },
     password: { type: String },
-    workgroupId: { type: String, required: true }
-
+    workgroupId: { type: String, required: true },
+    hideAlert: { type: Boolean, required: false }
   }, {
     timestamps: true
   });
