@@ -8,9 +8,9 @@ module.exports = function (app) {
   const box = new Schema({
     name: { type: String, required: true },
     itemnumber: { type: Number, required: true },
-    warehouseId: { type: String, required: true },
-    workgroupId: { type: String, required: false },
-    boxtypeId: { type: String, required: true },
+    warehouseId: { type: Schema.Types.ObjectId, required: true },
+    workgroupId: { type: Schema.Types.ObjectId, required: false },
+    boxtypeId: { type: Schema.Types.ObjectId, required: true },
     weight: { type: String, required: false }
   }, {
     timestamps: true

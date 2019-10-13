@@ -4,13 +4,14 @@
 // for more of what you can do here.
 module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
+  const { Schema } = mongooseClient;
   const user = new mongooseClient.Schema({
 
     firstname: { type: String },
     lastname: { type: String },
     email: { type: String, unique: true, lowercase: true },
     password: { type: String },
-    workgroupId: { type: String, required: true },
+    workgroupId: { type: Schema.Types.ObjectId, required: true },
     hideAlert: { type: Boolean, required: false }
   }, {
     timestamps: true
